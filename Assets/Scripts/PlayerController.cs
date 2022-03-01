@@ -44,13 +44,13 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void TryPickUp()
     {
-        //Debug.DrawRay(cam.transform.position, cam.transform.forward * 3);
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * grabDistance, Color.red);
 
         //If Left Click and no held object, start holding it
         if (Input.GetMouseButtonDown(0) && heldObject == null)
         {
             RaycastHit ray;
-            Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, 1, layersToGrab);
+            Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, grabDistance, layersToGrab);
             if (ray.collider != null)
             {
                 heldObject = ray.collider.gameObject.GetComponent<Rigidbody>();
