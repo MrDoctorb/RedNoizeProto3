@@ -1159,7 +1159,7 @@ MonoBehaviour:
   walkSpeed: 700
   jumpForce: 5
   holdDistance: 2
-  grabDistance: 6
+  grabDistance: 3
   cameraTint: {fileID: 419480604}
   layersToGrab:
     serializedVersion: 2
