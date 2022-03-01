@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
     Camera cam;
     Rigidbody rb;
     [SerializeField] float cameraSensitivity = 0, walkSpeed, jumpForce = 0;
+    [SerializeField] float holdDistance = 1, grabDistance = 1;
+    [SerializeField] Renderer cameraTint;
+    [SerializeField] LayerMask layersToGrab;
     bool grounded = true;
     bool maskActive = false;
     int selectedMask;
     GameObject[] currentColorObjs = new GameObject[0];
-    [SerializeField] Renderer cameraTint;
+    Rigidbody heldObject;
     void Start()
     {
         //Set Variables
@@ -33,6 +36,49 @@ public class PlayerController : MonoBehaviour
         CameraControl();
         Movement();
         ColorControl();
+        TryPickUp();
+
+    }
+    /// <summary>
+    ///Every Frame check for player input regarding picking up and setting down objects
+    /// </summary>
+    void TryPickUp()
+    {
+        //Debug.DrawRay(cam.transform.position, cam.transform.forward * 3);
+
+        //If Left Click and no held object, start holding it
+        if (Input.GetMouseButtonDown(0) && heldObject == null)
+        {
+            RaycastHit ray;
+            Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, 1, layersToGrab);
+            if (ray.collider != null)
+            {
+                heldObject = ray.collider.gameObject.GetComponent<Rigidbody>();
+                heldObject.useGravity = false;
+                StartCoroutine(Hold());
+            }
+        }
+        else if (Input.GetMouseButtonDown(1) && heldObject != null)
+        {
+            heldObject.useGravity = true;
+            heldObject = null;
+            StopCoroutine(Hold());
+        }
+    }
+
+    IEnumerator Hold()
+    {
+        if (heldObject != null)
+        {
+            Vector3 currentObjPos = heldObject.transform.position;
+            Vector3 endPoint = cam.transform.position + cam.transform.forward * holdDistance;
+
+            heldObject.velocity = Vector3.zero;
+            heldObject.AddForce((endPoint - currentObjPos) * 500);
+
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(Hold());
+        }
     }
 
     /// <summary>
@@ -51,14 +97,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //Scroll wheel switches colors
-        if (Input.mouseScrollDelta.y > 0)
+        if (maskActive)
         {
-            ChangeMaskColor(selectedMask + 1);
-        }
-        else if (Input.mouseScrollDelta.y < 0)
-        {
-            ChangeMaskColor(selectedMask + 2);
+            //Scroll wheel switches colors
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                ChangeMaskColor(selectedMask + 1);
+            }
+            else if (Input.mouseScrollDelta.y < 0)
+            {
+                ChangeMaskColor(selectedMask + 2);
+            }
         }
     }
 
