@@ -10,13 +10,14 @@ public class DialogueChoice : StateMachineBehaviour
     [SerializeField] GameObject button;
     Canvas canvas;
     GameObject[] allButtons;
+    Animator anime;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        anime = animator;
         allButtons = new GameObject[choices.Length];
         canvas = GameObject.FindObjectOfType<Canvas>();
-        Debug.Log("AA");
         for (int i = 0; i < choices.Length; ++i)
         {
             GameObject newButton = Instantiate(button, canvas.transform);
@@ -26,13 +27,14 @@ public class DialogueChoice : StateMachineBehaviour
             //Make a new variable for the function in order to pass the value of i instead of the reference to i
             int temp = i;
             newButton.GetComponent<Button>().onClick.AddListener(() => { ChooseOption(temp); });
-            newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.ToString();    
+            newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = choices[i];    
         }
     }
         
     void ChooseOption(int option)
     {
-        Debug.Log("Clicked with value " + option);
+        anime.SetInteger("Choice", option);
+        anime.SetTrigger("Finished");
         foreach(GameObject obj in allButtons)
         {
             Destroy(obj);
