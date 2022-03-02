@@ -25,10 +25,19 @@ public class ButtonController : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if(other.gameObject.layer == 6)
+        {
+            ChangeButtonState(false);
+        }
+    }
+
     void ChangeButtonState(bool newState)
     {
         if (buttonPressed != newState)
         {
+            buttonPressed = newState;
             foreach (IReactive output in outputs)
             {
                 if (buttonPressed)
