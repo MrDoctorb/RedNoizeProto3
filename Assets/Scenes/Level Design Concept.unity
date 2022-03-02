@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 85048318}
   - component: {fileID: 85048317}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Wall 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 183174703}
   - component: {fileID: 183174702}
   m_Layer: 0
-  m_Name: Cube (13)
+  m_Name: Wall 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 336710386}
   - component: {fileID: 336710385}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Wall 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 446490518}
   - component: {fileID: 446490517}
   m_Layer: 0
-  m_Name: Cube (18)
+  m_Name: Yellow Doors
   m_TagString: Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 673896123}
   - component: {fileID: 673896122}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Ceiling 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 696924940}
   - component: {fileID: 696924939}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: Ceiling 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1352,7 +1352,7 @@ GameObject:
   - component: {fileID: 768303054}
   - component: {fileID: 768303053}
   m_Layer: 0
-  m_Name: Cube (20)
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 804012383}
   - component: {fileID: 804012382}
   m_Layer: 0
-  m_Name: Cube (16)
+  m_Name: Red Door
   m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1644,7 +1644,7 @@ GameObject:
   - component: {fileID: 865343510}
   - component: {fileID: 865343509}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: Wall 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1741,7 @@ GameObject:
   - component: {fileID: 921402955}
   - component: {fileID: 921402954}
   m_Layer: 0
-  m_Name: Cube (14)
+  m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1838,7 +1838,7 @@ GameObject:
   - component: {fileID: 1030912792}
   - component: {fileID: 1030912791}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: Wall 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2073,7 +2073,7 @@ GameObject:
   - component: {fileID: 1343283447}
   - component: {fileID: 1343283446}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Wall 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2268,7 +2268,7 @@ GameObject:
   - component: {fileID: 1490448210}
   - component: {fileID: 1490448209}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Wall 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 1546746521}
   - component: {fileID: 1546746520}
   m_Layer: 0
-  m_Name: Cube (15)
+  m_Name: Wall 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2547,7 +2547,7 @@ GameObject:
   - component: {fileID: 1639707734}
   - component: {fileID: 1639707733}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Wall 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2742,7 +2742,7 @@ GameObject:
   - component: {fileID: 1680131233}
   - component: {fileID: 1680131232}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Ceiling 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2937,7 +2937,7 @@ GameObject:
   - component: {fileID: 1801154925}
   - component: {fileID: 1801154924}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Wall 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3230,7 +3230,7 @@ GameObject:
   - component: {fileID: 1994177969}
   - component: {fileID: 1994177968}
   m_Layer: 0
-  m_Name: Cube (17)
+  m_Name: Blue Door
   m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3327,7 +3327,7 @@ GameObject:
   - component: {fileID: 2010869669}
   - component: {fileID: 2010869668}
   m_Layer: 0
-  m_Name: Cube (9)
+  m_Name: Wall 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3522,7 +3522,7 @@ GameObject:
   - component: {fileID: 2141872418}
   - component: {fileID: 2141872417}
   m_Layer: 0
-  m_Name: Cube (19)
+  m_Name: Wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3619,7 +3619,7 @@ GameObject:
   - component: {fileID: 2144797998}
   - component: {fileID: 2144797997}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: Wall 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
