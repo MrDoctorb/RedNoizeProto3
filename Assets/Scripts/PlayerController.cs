@@ -61,10 +61,15 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(1) && heldObject != null)
         {
-            heldObject.useGravity = true;
-            heldObject = null;
-            StopCoroutine(Hold());
+            Drop();
         }
+    }
+
+    void Drop()
+    {
+        heldObject.useGravity = true;
+        heldObject = null;
+        StopCoroutine(Hold());
     }
 
     IEnumerator Hold()
@@ -84,7 +89,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                heldObject = null;
+                Drop();
             }
         }
     }

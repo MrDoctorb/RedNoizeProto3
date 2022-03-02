@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    [SerializeField, SerializeReference]
-    List<IReactive> outputs = new List<IReactive>();
+    [SerializeField]
+    List<Component> outputs = new List<Component>();
     
     public bool buttonPressed = false;
 
