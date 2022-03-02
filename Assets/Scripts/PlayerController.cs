@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     Camera cam;
     Rigidbody rb;
-    [SerializeField] float cameraSensitivity = 0, walkSpeed, jumpForce = 0;
+    public float cameraSensitivity = 0;
+    [SerializeField] float walkSpeed, jumpForce = 0;
     [SerializeField] float holdDistance = 1, grabDistance = 1;
     [SerializeField] Renderer cameraTint;
     [SerializeField] LayerMask layersToGrab;
@@ -70,14 +71,21 @@ public class PlayerController : MonoBehaviour
     {
         if (heldObject != null)
         {
-            Vector3 currentObjPos = heldObject.transform.position;
-            Vector3 endPoint = cam.transform.position + cam.transform.forward * holdDistance;
+            if (heldObject.gameObject.activeSelf)
+            {
+                Vector3 currentObjPos = heldObject.transform.position;
+                Vector3 endPoint = cam.transform.position + cam.transform.forward * holdDistance;
 
-            heldObject.velocity = Vector3.zero;
-            heldObject.AddForce((endPoint - currentObjPos) * 500);
+                heldObject.velocity = Vector3.zero;
+                heldObject.AddForce((endPoint - currentObjPos) * 500);
 
-            yield return new WaitForEndOfFrame();
-            StartCoroutine(Hold());
+                yield return new WaitForEndOfFrame();
+                StartCoroutine(Hold());
+            }
+            else
+            {
+                heldObject = null;
+            }
         }
     }
 
@@ -87,7 +95,7 @@ public class PlayerController : MonoBehaviour
     void ColorControl()
     {
         //Turns the mask on or off
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             maskActive = !maskActive;
             foreach (GameObject obj in currentColorObjs)
@@ -162,6 +170,9 @@ public class PlayerController : MonoBehaviour
 
         Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * walkSpeed,
                                 rb.velocity.y, Input.GetAxis("Vertical") * Time.deltaTime * walkSpeed);
+        
+        print(Input.GetAxis("Vertical"));
+        
         //Change the world direction to relative movement
         rb.velocity = transform.TransformDirection(worldDirection);
 
