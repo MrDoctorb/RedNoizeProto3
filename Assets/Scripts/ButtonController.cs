@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AYellowpaper;
 
 public class ButtonController : MonoBehaviour
 {
-    [SerializeField]
+
+    [SerializeField, RequireInterface(typeof(IReactive))]
     List<Component> outputs = new List<Component>();
-    
+
     public bool buttonPressed = false;
 
 
@@ -25,11 +27,11 @@ public class ButtonController : MonoBehaviour
 
     void ChangeButtonState(bool newState)
     {
-        if(buttonPressed != newState)
+        if (buttonPressed != newState)
         {
-            foreach(IReactive output in outputs)
+            foreach (IReactive output in outputs)
             {
-                if(buttonPressed)
+                if (buttonPressed)
                 {
                     output.TurnOn();
                 }
