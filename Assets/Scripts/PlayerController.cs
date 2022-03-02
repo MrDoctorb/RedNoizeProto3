@@ -61,10 +61,15 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(1) && heldObject != null)
         {
-            heldObject.useGravity = true;
-            heldObject = null;
-            StopCoroutine(Hold());
+            Drop();
         }
+    }
+
+    void Drop()
+    {
+        heldObject.useGravity = true;
+        heldObject = null;
+        StopCoroutine(Hold());
     }
 
     IEnumerator Hold()
@@ -84,7 +89,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                heldObject = null;
+                Drop();
             }
         }
     }
@@ -170,8 +175,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * walkSpeed,
                                 rb.velocity.y, Input.GetAxis("Vertical") * Time.deltaTime * walkSpeed);
-        
-        print(Input.GetAxis("Vertical"));
         
         //Change the world direction to relative movement
         rb.velocity = transform.TransformDirection(worldDirection);

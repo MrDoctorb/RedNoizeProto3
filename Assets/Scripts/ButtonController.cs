@@ -4,26 +4,40 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    [SerializeField, SerializeReference]
+    List<IReactive> outputs = new List<IReactive>();
+    
     public bool buttonPressed = false;
+
+
     private void OnCollisionStay(Collision other)
     {
         //Layer 6 is moveable objects
         if (other.gameObject.layer == 6)
         {
-            buttonPressed = true;
+            ChangeButtonState(true);
         }
         else
         {
-            buttonPressed = false;
+            ChangeButtonState(false);
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    void ChangeButtonState(bool newState)
     {
-        if (other.gameObject.layer == 6)
+        if(buttonPressed != newState)
         {
-            buttonPressed = false;
-
+            foreach(IReactive output in outputs)
+            {
+                if(buttonPressed)
+                {
+                    output.TurnOn();
+                }
+                else
+                {
+                    output.TurnOff();
+                }
+            }
         }
     }
 }
