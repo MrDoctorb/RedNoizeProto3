@@ -180,9 +180,12 @@ public class PlayerController : MonoBehaviour
         //Change the world direction to relative movement
         rb.velocity = transform.TransformDirection(worldDirection);
 
-        //Checking Jumping Stuff
-        grounded = Physics.Linecast(transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
 
+        Debug.DrawLine(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0), Color.green);
+        //Checking Jumping Stuff
+        grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
+
+        print(grounded);
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {

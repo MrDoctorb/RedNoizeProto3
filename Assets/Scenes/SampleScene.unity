@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraSensitivity: 300
   walkSpeed: 700
-  jumpForce: 5
+  jumpForce: 500
   holdDistance: 2
   grabDistance: 3
   cameraTint: {fileID: 419480604}
