@@ -10,24 +10,40 @@ public class ButtonController : MonoBehaviour
     List<Component> outputs = new List<Component>();
 
     public bool buttonPressed = false;
+    List<GameObject> collidingObjs = new List<GameObject>();
 
-
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         //Layer 6 is moveable objects
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == 6 && !collidingObjs.Contains(other.gameObject))
         {
-            ChangeButtonState(true);
-        }
-        else
-        {
-            ChangeButtonState(false);
+            collidingObjs.Add(other.gameObject);
         }
     }
 
     private void OnCollisionExit(Collision other)
     {
         if(other.gameObject.layer == 6)
+        {
+            collidingObjs.Remove(other.gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if(collidingObjs.Count >= 1)
+        {
+            foreach (GameObject obj in collidingObjs)
+            {
+                if (!obj.activeSelf)
+                {
+                    ChangeButtonState(false);
+                    return;
+                }
+            }
+            ChangeButtonState(true);
+        }
+        else
         {
             ChangeButtonState(false);
         }

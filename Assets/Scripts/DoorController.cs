@@ -14,14 +14,12 @@ public class DoorController : MonoBehaviour, IReactive
 
     public void TurnOff()
     {
-        print("Going Off");
         rend.enabled = true;
         col.enabled = true;
     }
 
     public void TurnOn()
     {
-        print("Going On");
         rend.enabled = false;
         col.enabled = false;
     }
