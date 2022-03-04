@@ -7,17 +7,22 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject optionMenu;
+
     private bool isPaused;
+    public bool optionOpen = false;
     private PlayerController playerController;
     [SerializeField] Slider mouseBar;
 
+
+   
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !optionOpen)
         {
-            
-            if(isPaused)
+            Cursor.lockState = CursorLockMode.None;
+            if (isPaused)
             {
                 Resume();
             }
@@ -40,6 +45,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Menu()
@@ -55,8 +61,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Options()
     {
+        pauseMenu.gameObject.SetActive(false);
+        optionMenu.gameObject.SetActive(true);
+        optionOpen = true;
         mouseBar.value+=20;
-        playerController.cameraSensitivity = mouseBar.value;
+    }
+
+    public void Back()
+    {
+        pauseMenu.gameObject.SetActive(true);
+        optionMenu.gameObject.SetActive(false);
+        optionOpen = false;
     }
 
 }
