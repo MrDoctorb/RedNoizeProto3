@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public GameObject optionMenu;
-
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject optionMenu;
+    [SerializeField] TextMeshProUGUI camValue;
     private bool isPaused;
-    public bool optionOpen = false;
+    private bool optionOpen = false;
     private PlayerController playerController;
     [SerializeField] Slider mouseBar;
+    [SerializeField] GameObject player;
+    private float cameraMax = 1000;
 
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+        mouseBar.maxValue = cameraMax;
+        mouseBar.value = player.GetComponent<PlayerController>().cameraSensitivity;
+    }
 
-   
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +38,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+      
     }
 
     public void Pause()
@@ -64,7 +72,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.gameObject.SetActive(false);
         optionMenu.gameObject.SetActive(true);
         optionOpen = true;
-        mouseBar.value+=20;
     }
 
     public void Back()
@@ -74,4 +81,9 @@ public class PauseMenu : MonoBehaviour
         optionOpen = false;
     }
 
+    public void Slider()
+    {
+       playerController.cameraSensitivity = mouseBar.value;
+        camValue.text = mouseBar.value.ToString("F0");
+    }
 }

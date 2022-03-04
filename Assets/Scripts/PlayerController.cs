@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         Movement();
         ColorControl();
         TryPickUp();
-
     }
     /// <summary>
     ///Every Frame check for player input regarding picking up and setting down objects
@@ -185,7 +184,7 @@ public class PlayerController : MonoBehaviour
         //Checking Jumping Stuff
         grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
 
-        print(grounded);
+       // print(grounded);
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
