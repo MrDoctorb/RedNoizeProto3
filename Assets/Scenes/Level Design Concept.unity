@@ -2101,6 +2101,7 @@ GameObject:
   - component: {fileID: 768303055}
   - component: {fileID: 768303054}
   - component: {fileID: 768303053}
+  - component: {fileID: 768303057}
   m_Layer: 0
   m_Name: Window
   m_TagString: Untagged
@@ -2186,6 +2187,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &768303057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768303052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad437d0f9f2bc943a0dcf01e12e1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &782157150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4294,7 +4307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1368853296525348321, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.199696
+      value: -21.09
       objectReference: {fileID: 0}
     - target: {fileID: 1368853296525348321, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4302,7 +4315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1368853296525348321, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.97574
+      value: 49.39
       objectReference: {fileID: 0}
     - target: {fileID: 1368853296525348321, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4336,6 +4349,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pressure Plate
       objectReference: {fileID: 0}
+    - target: {fileID: 2134248062830560509, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
+      propertyPath: outputs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134248062830560509, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
+      propertyPath: outputs.Array.data[0]
+      value: 
+      objectReference: {fileID: 768303057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4747e8ac036a3014095fee9d795e0667, type: 3}
 --- !u!1 &1664402804
