@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Renderer cameraTint;
     [SerializeField] LayerMask layersToGrab;
     bool grounded = true;
-    bool maskActive = false;
+    public bool maskActive = false;
     int selectedMask;
     GameObject[] currentColorObjs = new GameObject[0];
     Rigidbody heldObject;
