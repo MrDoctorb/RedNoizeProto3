@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using RedNoize;
 
 public class Dialouge : StateMachineBehaviour
 {
@@ -12,7 +13,7 @@ public class Dialouge : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        text = FindObjectOfType<TextMeshProUGUI>();
+        text = Ref.dialougeText;
         text.text = NextLine();
     }
 

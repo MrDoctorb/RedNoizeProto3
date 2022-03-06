@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using RedNoize;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
@@ -16,8 +17,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject player;
     private float cameraMax = 1000;
 
+    [SerializeField] TextMeshProUGUI dialougeText;
+
     private void Start()
     {
+        Ref.dialougeText = dialougeText;
+
+
         playerController = FindObjectOfType<PlayerController>();
         mouseBar.maxValue = cameraMax;
         mouseBar.value = player.GetComponent<PlayerController>().cameraSensitivity;

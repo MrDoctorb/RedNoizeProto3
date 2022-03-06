@@ -7,3 +7,8 @@ public interface IReactive
     void TurnOn();
     void TurnOff();
 }
+
+public interface IInteractable
+{
+    void Interact();
+}

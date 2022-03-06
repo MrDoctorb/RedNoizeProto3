@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RedNoize;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody heldObject;
     void Start()
     {
+        Ref.player = this;
+
         //Set Variables
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
@@ -42,16 +45,16 @@ public class PlayerController : MonoBehaviour
         CameraControl();
         Movement();
         ColorControl();
-        TryPickUp();
+        TryInteract();
     }
     /// <summary>
     ///Every Frame check for player input regarding picking up and setting down objects
     /// </summary>
-    void TryPickUp()
+    void TryInteract()
     {
         Debug.DrawRay(cam.transform.position, cam.transform.forward * grabDistance, Color.red);
 
-        //If Left Click and no held object, start holding it
+        //If Left Click and no held object,try to interact
         if (Input.GetMouseButtonDown(0) && heldObject == null)
         {
             RaycastHit ray;
@@ -61,6 +64,14 @@ public class PlayerController : MonoBehaviour
                 heldObject = ray.collider.gameObject.GetComponent<Rigidbody>();
                 heldObject.useGravity = false;
                 StartCoroutine(Hold());
+                return;
+            }
+            Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, grabDistance);
+
+            //This will later be replaced with IInteractable functionality
+            if (ray.collider != null && ray.collider.GetComponent<NPCController>())
+            {
+                ray.collider.GetComponent<NPCController>().Interact();
             }
         }
         else if (Input.GetMouseButtonDown(1) && heldObject != null)
