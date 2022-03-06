@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     bool grounded = true;
     public bool maskActive = false;
     int selectedMask;
-    GameObject[] currentColorObjs = new GameObject[0];
+    List<GameObject> currentColorObjs = new List<GameObject>();
     Rigidbody heldObject;
     void Start()
     {
@@ -26,7 +26,12 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
 
-        currentColorObjs = GameObject.FindGameObjectsWithTag("Red");
+        currentColorObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Red"));
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
+        {
+            currentColorObjs.Add(obj);
+        }
 
         cameraTint.enabled = false;
         cameraTint.material.color = new Color(1, 0, 0, .5f);
@@ -155,7 +160,12 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        currentColorObjs = GameObject.FindGameObjectsWithTag(colorString);
+        currentColorObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag(colorString));
+
+        foreach(GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
+        {
+            currentColorObjs.Add(obj);
+        }
 
         foreach (GameObject obj in currentColorObjs)
         {

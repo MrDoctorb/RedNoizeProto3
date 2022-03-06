@@ -8144,9 +8144,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: You must put on the mask to play this puzzle
       objectReference: {fileID: 0}
-    - target: {fileID: 5063013180164162316, guid: e40daee36e039ec4d947da119cdfed92, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e40daee36e039ec4d947da119cdfed92, type: 3}

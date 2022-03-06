@@ -12,7 +12,7 @@ public class ForcedMaskRoom : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerController pc = player.GetComponent<PlayerController>();
         if (pc.maskActive == true)
@@ -22,6 +22,6 @@ public class ForcedMaskRoom : MonoBehaviour
         else if (pc.maskActive == false)
         {
             gameObject.SetActive(true);
-        }
+        }*/
     }
 }
