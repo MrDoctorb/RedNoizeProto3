@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: aca2ffab1c5e16b49a411d64cfe9b3a3
+guid: 30305ac7ea6e8c64b9a919133294b694
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrystalBaked
-    second: {fileID: 2100000, guid: ad1b97a22107bd8468857c92c5bdb997, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CrystalLensBaked
-    second: {fileID: 2100000, guid: 3b2020fa7017ab14fa2ab18f2515a722, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
