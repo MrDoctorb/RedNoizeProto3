@@ -42,10 +42,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CameraControl();
-        Movement();
-        ColorControl();
-        TryInteract();
+        if(Time.timeScale > 0)
+        {
+            CameraControl();
+            Movement();
+            ColorControl();
+            TryInteract();
+        }
     }
     /// <summary>
     ///Every Frame check for player input regarding picking up and setting down objects
