@@ -153,15 +153,15 @@ public class PlayerController : MonoBehaviour
         {
             case 0:
                 colorString = "Red";
-                cameraTint.material.color = new Color(1, 0, 0, .5f);
+                cameraTint.material.color = new Color(1, 0, 0, .25f);
                 break;
             case 1:
                 colorString = "Blue";
-                cameraTint.material.color = new Color(0, 0, 1, .5f);
+                cameraTint.material.color = new Color(0, 0, 1, .25f);
                 break;
             case 2:
                 colorString = "Yellow";
-                cameraTint.material.color = new Color(1, .92f, .16f, .5f);
+                cameraTint.material.color = new Color(1, .92f, .16f, .25f);
                 break;
         }
 
@@ -219,11 +219,11 @@ public class PlayerController : MonoBehaviour
     void CameraControl()
     {
         //Horizontal Camera Movement
-        transform.eulerAngles += new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * cameraSensitivity;
+        transform.eulerAngles += new Vector3(0, Input.GetAxis("Mouse X"), 0)  * cameraSensitivity;
 
         //Vertical Camera Movement
         Vector3 camAngle = cam.transform.eulerAngles;
-        camAngle -= new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * cameraSensitivity;
+        camAngle -= new Vector3(Input.GetAxis("Mouse Y"), 0, 0)  * cameraSensitivity;
 
         //Ensure players don't rotate vertically
         if (camAngle.x < 90 || camAngle.x > 270)
