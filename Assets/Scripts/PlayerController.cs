@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
 
         currentColorObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag(colorString));
 
-        foreach(GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
         {
             currentColorObjs.Add(obj);
         }
@@ -193,10 +193,10 @@ public class PlayerController : MonoBehaviour
     {
         //Base Movement
 
-        Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * walkSpeed,
-                                rb.velocity.y, Input.GetAxis("Vertical") * Time.deltaTime * walkSpeed);
-      
-        
+        Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * walkSpeed,
+                                rb.velocity.y, Input.GetAxis("Vertical") * walkSpeed);
+
+
         //Change the world direction to relative movement
         rb.velocity = transform.TransformDirection(worldDirection);
 
@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
         //Checking Jumping Stuff
         grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
 
-       // print(grounded);
+        // print(grounded);
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
