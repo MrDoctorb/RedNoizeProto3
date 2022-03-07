@@ -6,17 +6,28 @@ using RedNoize;
 
 public class NPCController : MonoBehaviour, IInteractable
 {
-    [SerializeField] Animator dialougeAnimator;
+    Animator dialougeAnimator;
     
+    void Start()
+    {
+        dialougeAnimator = GetComponent<Animator>();
+    }
+
     public void Interact()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+
         Ref.player.enabled = false;
-        Ref.dialougeText.enabled = true;
-        dialougeAnimator.StartPlayback();
+        Ref.dialougeText.gameObject.SetActive(true);
+        dialougeAnimator.enabled = true;
     }
 
     void Update()
     {
-        
+        if (dialougeAnimator.enabled && dialougeAnimator.GetBool("DialougeDone"))
+        {
+            dialougeAnimator.enabled = false;
+        }
     }
 }
