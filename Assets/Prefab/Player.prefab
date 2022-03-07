@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16877b661a5b10e4e9f7b9e6e3374f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSensitivity: 300
-  walkSpeed: 700
+  cameraSensitivity: 3
+  walkSpeed: 7
   jumpForce: 500
   holdDistance: 2
   grabDistance: 3
@@ -306,3 +306,4 @@ MonoBehaviour:
   layersToGrab:
     serializedVersion: 2
     m_Bits: 64
+  maskActive: 0

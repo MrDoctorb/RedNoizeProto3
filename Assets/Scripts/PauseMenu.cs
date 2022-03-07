@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     private PlayerController playerController;
     [SerializeField] Slider mouseBar;
     [SerializeField] GameObject player;
-    private float cameraMax = 1000;
+    private float cameraMax = 5;
 
     [SerializeField] TextMeshProUGUI dialougeText;
 
