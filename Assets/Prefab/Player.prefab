@@ -302,6 +302,7 @@ MonoBehaviour:
   jumpForce: 500
   holdDistance: 2
   grabDistance: 3
+  throwPower: 10
   cameraTint: {fileID: 1620674692229351088}
   layersToGrab:
     serializedVersion: 2

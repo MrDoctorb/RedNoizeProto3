@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public float cameraSensitivity = 0;
     [SerializeField] float walkSpeed, jumpForce = 0;
-    [SerializeField] float holdDistance = 1, grabDistance = 1;
+    [SerializeField] float holdDistance = 1, grabDistance = 1, throwPower;
     [SerializeField] Renderer cameraTint;
     [SerializeField] LayerMask layersToGrab;
     bool grounded = true;
@@ -77,9 +77,16 @@ public class PlayerController : MonoBehaviour
                 ray.collider.GetComponent<NPCController>().Interact();
             }
         }
-        else if (Input.GetMouseButtonDown(1) && heldObject != null)
+        else if (heldObject != null)
         {
-            Drop();
+            if(Input.GetMouseButtonDown(0))
+            {
+                Drop();
+            }
+            else if(Input.GetMouseButtonDown(1))
+            {
+                Throw();
+            }
         }
     }
 
@@ -88,6 +95,12 @@ public class PlayerController : MonoBehaviour
         heldObject.useGravity = true;
         heldObject = null;
         StopCoroutine(Hold());
+    }
+
+    void Throw()
+    {
+        heldObject.velocity = cam.transform.forward * throwPower;
+        Drop();
     }
 
     IEnumerator Hold()
