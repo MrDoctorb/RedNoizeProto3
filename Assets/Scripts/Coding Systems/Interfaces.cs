@@ -15,5 +15,5 @@ public interface IInteractable
 
 public interface ITakeLight
 {
-    void LightHit(Ray ray = new Ray());
+    void LightHit(Ray ray = default);
 }
