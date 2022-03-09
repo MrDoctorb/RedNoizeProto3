@@ -21,12 +21,18 @@ public class NPCController : MonoBehaviour, IInteractable
         Ref.player.enabled = false;
         Ref.dialougeText.gameObject.SetActive(true);
         dialougeAnimator.enabled = true;
+        if(dialougeAnimator.GetBool("DialougeDone"))
+        {
+            dialougeAnimator.Rebind();
+            dialougeAnimator.Update(0f);
+        }
     }
 
     void Update()
     {
         if (dialougeAnimator.enabled && dialougeAnimator.GetBool("DialougeDone"))
         {
+            dialougeAnimator.SetTrigger("Finished");
             dialougeAnimator.enabled = false;
         }
     }
