@@ -2872,6 +2872,14 @@ PrefabInstance:
       value: rage 1
       objectReference: {fileID: 0}
     - target: {fileID: 8100320773420232829, guid: 596f3269d8762db448c941111e7736fc, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100320773420232829, guid: 596f3269d8762db448c941111e7736fc, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100320773420232829, guid: 596f3269d8762db448c941111e7736fc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fcefb513be416c646a0298019e5c8b08, type: 2}
