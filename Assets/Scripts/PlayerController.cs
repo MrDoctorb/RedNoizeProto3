@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
             {
                 heldObject = ray.collider.gameObject.GetComponent<Rigidbody>();
                 heldObject.useGravity = false;
+                heldObject.transform.parent = null;
                 StartCoroutine(Hold());
                 return;
             }
