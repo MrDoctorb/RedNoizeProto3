@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask layersToGrab;
     bool grounded = true;
     public bool maskActive = false;
-    int selectedMask;
+    public int selectedMask;
     List<GameObject> currentColorObjs = new List<GameObject>();
     Rigidbody heldObject;
     void Start()
