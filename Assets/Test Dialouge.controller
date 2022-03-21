@@ -545,6 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 0, y: 0, z: 0}
+  speed: 3
 --- !u!1102 &8191654081898498601
 AnimatorState:
   serializedVersion: 6
