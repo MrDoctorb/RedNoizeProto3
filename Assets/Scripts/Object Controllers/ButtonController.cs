@@ -15,7 +15,7 @@ public class ButtonController : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         //Layer 6 is moveable objects
-        if (other.gameObject.layer == 6 && !collidingObjs.Contains(other.gameObject))
+        if ((other.gameObject.layer == 6 || other.gameObject.layer == 7) && !collidingObjs.Contains(other.gameObject))
         {
             collidingObjs.Add(other.gameObject);
         }
@@ -23,7 +23,7 @@ public class ButtonController : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.layer == 6)
+        if(other.gameObject.layer == 6 || other.gameObject.layer == 7)
         {
             collidingObjs.Remove(other.gameObject);
         }
