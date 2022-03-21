@@ -38,13 +38,13 @@ public class GameController : MonoBehaviour
         if (playerController.maskActive)
         {
             current %= 3;
-            if (Input.mouseScrollDelta.y > 0)
+            if (Input.mouseScrollDelta.y < 0)
             {
                 current++;
                 current %= 3;
                 selector.GetComponent<RectTransform>().anchoredPosition = pos[current];
             }
-            else if (Input.mouseScrollDelta.y < 0)
+            else if (Input.mouseScrollDelta.y > 0)
             {
                 current += 2;
                 current %= 3;
