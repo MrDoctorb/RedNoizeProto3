@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     {
         if (playerController.maskActive)
         {
-            current %= 3;
+            //current %= 3;
             if (Input.mouseScrollDelta.y < 0)
             {
                 current++;
