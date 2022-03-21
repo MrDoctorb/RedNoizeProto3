@@ -1755,8 +1755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maskIcon:
   - {fileID: 26663891}
-  - {fileID: 851536235}
   - {fileID: 599895762}
+  - {fileID: 851536235}
   selector: {fileID: 102261859}
   pos:
   - {x: 0, y: 0, z: 0}
