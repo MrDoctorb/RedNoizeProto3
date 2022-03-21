@@ -30,10 +30,5 @@ public class NPCController : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (dialougeAnimator.enabled && dialougeAnimator.GetBool("DialougeDone"))
-        {
-            dialougeAnimator.SetTrigger("Finished");
-            dialougeAnimator.enabled = false;
-        }
     }
 }

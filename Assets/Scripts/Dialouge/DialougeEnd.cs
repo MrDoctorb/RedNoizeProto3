@@ -14,5 +14,7 @@ public class DialougeEnd : StateMachineBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         animator.SetBool("DialougeDone", true);
+
+        animator.enabled = false;
     }
 }
