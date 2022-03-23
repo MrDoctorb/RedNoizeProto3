@@ -212,10 +212,18 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Movement()
     {
+        float currentSpeed = walkSpeed;
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed *= 2;
+        }
+
+
+
         //Base Movement
 
-        Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * walkSpeed,
-                                rb.velocity.y, Input.GetAxis("Vertical") * walkSpeed);
+        Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * currentSpeed,
+                                rb.velocity.y, Input.GetAxis("Vertical") * currentSpeed);
 
 
         //Change the world direction to relative movement

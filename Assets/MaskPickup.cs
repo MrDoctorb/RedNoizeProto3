@@ -11,7 +11,14 @@ public class MaskPickup : MonoBehaviour
         {
             PlayerController player = other.GetComponent<PlayerController>();
             player.PickUpMask();
-            player.ChangeMaskColor(color);
+            if(player.maskActive)
+            {
+                player.ChangeMaskColor(color);
+            }
+            else
+            {
+                player.selectedMask = color;
+            }
             Destroy(gameObject);
 
         }
