@@ -7,6 +7,8 @@ using RedNoize;
 public class NPCController : MonoBehaviour, IInteractable
 {
     Animator dialougeAnimator;
+
+    public Dictionary<string, GameObject> objs;
     
     void Start()
     {
