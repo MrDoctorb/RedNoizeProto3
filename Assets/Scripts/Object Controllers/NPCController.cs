@@ -8,11 +8,17 @@ public class NPCController : MonoBehaviour, IInteractable
 {
     Animator dialougeAnimator;
 
+    [SerializeField] VisibleDictionaryWorkaround[] reactiveObjects;
     public Dictionary<string, GameObject> objs;
     
     void Start()
     {
         dialougeAnimator = GetComponent<Animator>();
+        objs = new Dictionary<string, GameObject>();
+        foreach(VisibleDictionaryWorkaround workaround in reactiveObjects)
+        {
+            objs.Add(workaround.key, workaround.value);
+        }
     }
 
     public void Interact()
@@ -29,8 +35,11 @@ public class NPCController : MonoBehaviour, IInteractable
             dialougeAnimator.Update(0f);
         }
     }
+}
 
-    void Update()
-    {
-    }
+[System.Serializable]
+public struct VisibleDictionaryWorkaround
+{
+    public string key;
+    public GameObject value;
 }
