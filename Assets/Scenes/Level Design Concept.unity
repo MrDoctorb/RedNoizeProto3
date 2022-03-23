@@ -3834,7 +3834,7 @@ GameObject:
   - component: {fileID: 588279096}
   m_Layer: 0
   m_Name: Red Door
-  m_TagString: Yellow
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10989,7 +10989,7 @@ GameObject:
   - component: {fileID: 1290621994}
   m_Layer: 0
   m_Name: Blue Platform
-  m_TagString: Yellow
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
