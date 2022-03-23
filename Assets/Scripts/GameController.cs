@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RedNoize;
 
 public class GameController : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class GameController : MonoBehaviour
 
     private void MaskIndicator()
     {
-        if (playerController.maskActive)
+        /*if (playerController.maskActive)
         {
             //current %= 3;
             if (Input.mouseScrollDelta.y < 0)
@@ -50,6 +51,8 @@ public class GameController : MonoBehaviour
                 current %= 3;
                 selector.GetComponent<RectTransform>().anchoredPosition = pos[current];
             }
-        }
+        }*/
+        selector.GetComponent<RectTransform>().anchoredPosition = maskIcon[2].GetComponent<RectTransform>().anchoredPosition + new Vector2(0, Ref.player.selectedMask * 35) + offset;
+
     }
 }
