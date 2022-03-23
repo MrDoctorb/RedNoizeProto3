@@ -6,6 +6,7 @@ using RedNoize;
 
 public class DialougeEnd : StateMachineBehaviour
 {
+    [SerializeField] bool oneTimeDialouge;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -16,5 +17,10 @@ public class DialougeEnd : StateMachineBehaviour
         animator.SetBool("DialougeDone", true);
 
         animator.enabled = false;
+
+        if(oneTimeDialouge)
+        {
+            Destroy(animator.GetComponent<NPCController>());
+        }
     }
 }
