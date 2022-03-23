@@ -137,6 +137,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
         {
             maskActive = !maskActive;
+            ChangeMaskColor(selectedMask);
             foreach (GameObject obj in currentColorObjs)
             {
                 obj.SetActive(!maskActive);
