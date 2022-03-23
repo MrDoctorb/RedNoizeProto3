@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     private Vector2 offset = new Vector2(-5f, 5f);
     private int current;
-   
+
 
     private void Start()
     {
@@ -52,7 +52,11 @@ public class GameController : MonoBehaviour
                 selector.GetComponent<RectTransform>().anchoredPosition = pos[current];
             }
         }*/
-        selector.GetComponent<RectTransform>().anchoredPosition = maskIcon[2].GetComponent<RectTransform>().anchoredPosition + new Vector2(0, Ref.player.selectedMask * 35) + offset;
+        if (Ref.player.maskActive)
+        {
 
+            selector.GetComponent<RectTransform>().anchoredPosition = maskIcon[2].GetComponent<RectTransform>().anchoredPosition +
+                                                                    new Vector2(0, (Ref.player.selectedMask - 1) * 35) + offset;
+        }
     }
 }

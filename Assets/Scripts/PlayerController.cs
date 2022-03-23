@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float holdDistance = 1, grabDistance = 1, throwPower;
     [SerializeField] Renderer cameraTint;
     [SerializeField] LayerMask layersToGrab;
+    [SerializeField] int masksCollected = 0;
     bool grounded = true;
     public bool maskActive = false;
     public int selectedMask;
@@ -37,12 +38,13 @@ public class PlayerController : MonoBehaviour
         }
 
         cameraTint.enabled = false;
-        cameraTint.material.color = new Color(1, 0, 0, .5f);
+        cameraTint.material.color = new Color(1, .92f, .16f, .25f);
+        ChangeMaskColor(2);
     }
 
     void Update()
     {
-        if(Time.timeScale > 0)
+        if (Time.timeScale > 0)
         {
             CameraControl();
             Movement();
@@ -80,11 +82,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (heldObject != null)
         {
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 Drop();
             }
-            else if(Input.GetMouseButtonDown(1))
+            else if (Input.GetMouseButtonDown(1))
             {
                 Throw();
             }
@@ -132,7 +134,7 @@ public class PlayerController : MonoBehaviour
     void ColorControl()
     {
         //Turns the mask on or off
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
         {
             maskActive = !maskActive;
             foreach (GameObject obj in currentColorObjs)
@@ -160,11 +162,11 @@ public class PlayerController : MonoBehaviour
     /// Call this to change the color of the mask and change the world accordingly
     /// </summary>
     /// <param name="color">0 = red, 1 = blue, 2 = yellow</param>
-    void ChangeMaskColor(int color)
+    public void ChangeMaskColor(int color)
     {
         selectedMask = color;
         selectedMask %= 3;
-
+        selectedMask = Mathf.Clamp(selectedMask, 3 - masksCollected, 2);
         string colorString = "";
         switch (selectedMask)
         {
@@ -180,6 +182,8 @@ public class PlayerController : MonoBehaviour
                 colorString = "Yellow";
                 cameraTint.material.color = new Color(1, .92f, .16f, .25f);
                 break;
+            default:
+                return;
         }
 
         foreach (GameObject obj in currentColorObjs)
@@ -236,17 +240,27 @@ public class PlayerController : MonoBehaviour
     void CameraControl()
     {
         //Horizontal Camera Movement
-        transform.eulerAngles += new Vector3(0, Input.GetAxis("Mouse X"), 0)  * cameraSensitivity;
+        transform.eulerAngles += new Vector3(0, Input.GetAxis("Mouse X"), 0) * cameraSensitivity;
 
         //Vertical Camera Movement
         Vector3 camAngle = cam.transform.eulerAngles;
-        camAngle -= new Vector3(Input.GetAxis("Mouse Y"), 0, 0)  * cameraSensitivity;
+        camAngle -= new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * cameraSensitivity;
 
         //Ensure players don't rotate vertically
         if (camAngle.x < 90 || camAngle.x > 270)
         {
 
             cam.transform.eulerAngles = camAngle;
+        }
+    }
+
+    public void PickUpMask()
+    {
+        ++masksCollected;
+        if (masksCollected > 3)
+        {
+            masksCollected = 3;
+            Debug.LogWarning("You have picked up more than 3 masks! 0-0");
         }
     }
 }
