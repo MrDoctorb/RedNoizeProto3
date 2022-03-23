@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     bool grounded = true;
     public bool maskActive = false;
     public int selectedMask;
-    List<GameObject> currentColorObjs = new List<GameObject>();
+    public List<GameObject> currentColorObjs = new List<GameObject>();
     Rigidbody heldObject;
     void Start()
     {
@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
         //Turns the mask on or off
         if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
         {
+            ChangeMaskColor(selectedMask);
             maskActive = !maskActive;
             foreach (GameObject obj in currentColorObjs)
             {
