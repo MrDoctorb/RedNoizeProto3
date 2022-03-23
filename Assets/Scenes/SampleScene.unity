@@ -2181,7 +2181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585185, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.8
+      value: -27.27
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585185, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2390,6 +2390,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7006980042046600033, guid: 910c6027363263144ab0a0429bba56a2, type: 3}
+      propertyPath: reactiveObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006980042046600033, guid: 910c6027363263144ab0a0429bba56a2, type: 3}
+      propertyPath: reactiveObjects.Array.data[0].key
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006980042046600033, guid: 910c6027363263144ab0a0429bba56a2, type: 3}
+      propertyPath: reactiveObjects.Array.data[0].value
+      value: 
+      objectReference: {fileID: 1651165248}
     - target: {fileID: 7006980042046600037, guid: 910c6027363263144ab0a0429bba56a2, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2434,5 +2446,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7006980042046600038, guid: 910c6027363263144ab0a0429bba56a2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e0940adc02758ae4eb5e066e771b16de, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 910c6027363263144ab0a0429bba56a2, type: 3}
