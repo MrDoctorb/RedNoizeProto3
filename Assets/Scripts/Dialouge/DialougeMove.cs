@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RedNoize;
 
 public class DialougeMove : StateMachineBehaviour
 {
@@ -14,7 +15,7 @@ public class DialougeMove : StateMachineBehaviour
     {
         anime = animator;
         Debug.Log(animator.GetComponent<NPCController>());
-        anime.GetComponent<NPCController>().StartCoroutine(MoveTo(endPos));
+        Ref.player.StartCoroutine(MoveTo(endPos));
     }
 
 
@@ -24,7 +25,7 @@ public class DialougeMove : StateMachineBehaviour
         anime.transform.position = Vector3.MoveTowards(anime.transform.position, endPos, speed * Time.deltaTime);
         if(Vector3.Distance(anime.transform.position, endPos) > .1f)
         {
-            anime.GetComponent<NPCController>().StartCoroutine(MoveTo(pos));
+            Ref.player.StartCoroutine(MoveTo(pos));
         }
 
     }
