@@ -25,6 +25,7 @@ public class NPCController : MonoBehaviour, IInteractable
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        Ref.player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
         Ref.player.enabled = false;
         Ref.dialougeText.gameObject.SetActive(true);
