@@ -19,9 +19,10 @@ public class PlayerController : MonoBehaviour
     List<GameObject> currentColorObjs = new List<GameObject>();
     Rigidbody heldObject;
 
-    public bool trigger;
+    GameController gc;
     void Start()
     {
+        gc = FindObjectOfType<GameController>();
         Ref.player = this;
 
         //Set Variables
@@ -289,5 +290,11 @@ public class PlayerController : MonoBehaviour
             masksCollected = 3;
             Debug.LogWarning("You have picked up more than 3 masks! 0-0");
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        gc.StartPopUp();
+        other.gameObject.SetActive(false);
     }
 }

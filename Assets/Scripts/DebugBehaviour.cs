@@ -15,7 +15,7 @@ public class DebugBehaviour : MonoBehaviour
     void Update()
     {
       
-         if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R))
         {
             Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         }

@@ -18,44 +18,34 @@ public class GameController : MonoBehaviour
     private Vector2 offset = new Vector2(-5f, 5f);
     private int currentText;
 
-    [SerializeField] TMP_Text PopUp;
+    [SerializeField] TMP_Text popText;
 
-    public List<string> popUps = new List<string>();
+    public List<string> popList = new List<string>();
+    public bool isTriggered;
+
     private void Start()
     {
         currentText = 0;
         pc = FindObjectOfType<PlayerController>();
-        pos[0] = maskIcon[0].GetComponent<RectTransform>().anchoredPosition + offset;
-        pos[1] = maskIcon[1].GetComponent<RectTransform>().anchoredPosition + offset;
-        pos[2] = maskIcon[2].GetComponent<RectTransform>().anchoredPosition + offset;
 
-        SetPopUps();
+        SetImagePOs();
+      SetPopUps();
     }
     void Update()
     {
         MaskIndicator();
     }
-
-   
+    public void StartPopUp()
+    {
+       
+          StartCoroutine(Text(popList[currentText]));
+          currentText++;
+         print(currentText);
+    
+    }
 
     private void MaskIndicator()
     {
-        /*if (playerController.maskActive)
-        {
-            //current %= 3;
-            if (Input.mouseScrollDelta.y < 0)
-            {
-                current++;
-                current %= 3;
-                selector.GetComponent<RectTransform>().anchoredPosition = pos[current];
-            }
-            else if (Input.mouseScrollDelta.y > 0)
-            {
-                current += 2;
-                current %= 3;
-                selector.GetComponent<RectTransform>().anchoredPosition = pos[current];
-            }
-        }*/
         if (Ref.player.maskActive)
         {
 
@@ -66,16 +56,24 @@ public class GameController : MonoBehaviour
 
     public IEnumerator Text(string text)
     {
-        PopUp.gameObject.SetActive(true);
-        PopUp.text = text;
+        popText.gameObject.SetActive(true);
+        popText.text = text;
         yield return new WaitForSeconds(4f);
-        PopUp.gameObject.SetActive(false);
+        popText.gameObject.SetActive(false);
     }
-
+  
     private void SetPopUps()
     {
-        popUps.Add("Press F to wear a mask");
-        popUps.Add("Use the mouse scroll wheel to change masks");
-
+        popList.Add("Left click to interact");
+        popList.Add("Press F to put on the mask");
+        popList.Add("Use the mouse scroll wheel to switch between masks");
+        popList.Add("Left click to pick up and drop boxes");
+        popList.Add("Right click to throw boxes");
+    }
+    private void SetImagePOs()
+    {
+        pos[0] = maskIcon[0].GetComponent<RectTransform>().anchoredPosition + offset;
+        pos[1] = maskIcon[1].GetComponent<RectTransform>().anchoredPosition + offset;
+        pos[2] = maskIcon[2].GetComponent<RectTransform>().anchoredPosition + offset;
     }
 }
