@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(Input.GetKeyDown(KeyCode.Alpha1))
             {
-                ChangeMaskColor(3);
+                ChangeMaskColor(2);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
