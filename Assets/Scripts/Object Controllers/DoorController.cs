@@ -6,12 +6,13 @@ public class DoorController : MonoBehaviour, IReactive
 {
     MeshRenderer rend;
     BoxCollider col;
-    bool isEnabledByDefault;
+    [SerializeField] bool isEnabledByDefault = true;
     void Start()
     {
         rend = GetComponent<MeshRenderer>();
         col = GetComponent<BoxCollider>();
-        isEnabledByDefault = gameObject.activeSelf;
+
+        TurnOff();
     }
 
     public void TurnOff()
