@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public int selectedMask;
     List<GameObject> currentColorObjs = new List<GameObject>();
     Rigidbody heldObject;
+
+    public bool trigger;
     void Start()
     {
         Ref.player = this;
