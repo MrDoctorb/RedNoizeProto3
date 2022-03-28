@@ -135,15 +135,19 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void ColorControl()
     {
-        //Turns the mask on or off
-        if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
+        //Only can turn mask on with this if
+        if(maskActive == false)
         {
-            maskActive = !maskActive;
-            ChangeMaskColor(selectedMask);
-            foreach (GameObject obj in currentColorObjs)
+            //Turns the mask on or off
+            if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
             {
-                obj.SetActive(!maskActive);
-                cameraTint.enabled = maskActive;
+                maskActive = !maskActive;
+                ChangeMaskColor(selectedMask);
+                foreach (GameObject obj in currentColorObjs)
+                {
+                    obj.SetActive(!maskActive);
+                    cameraTint.enabled = maskActive;
+                }
             }
         }
 

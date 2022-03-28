@@ -6,21 +6,24 @@ public class DoorController : MonoBehaviour, IReactive
 {
     MeshRenderer rend;
     BoxCollider col;
+    [SerializeField] bool isEnabledByDefault = true;
     void Start()
     {
         rend = GetComponent<MeshRenderer>();
         col = GetComponent<BoxCollider>();
+
+        TurnOff();
     }
 
     public void TurnOff()
     {
-        rend.enabled = true;
-        col.enabled = true;
+        rend.enabled = isEnabledByDefault;
+        col.enabled = isEnabledByDefault;
     }
 
     public void TurnOn()
     {
-        rend.enabled = false;
-        col.enabled = false;
+        rend.enabled = !isEnabledByDefault;
+        col.enabled = !isEnabledByDefault;
     }
 }
