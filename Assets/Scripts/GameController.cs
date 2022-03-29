@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
        
           StartCoroutine(Text(popList[currentText]));
           currentText++;
-         print(currentText);
     
     }
 
