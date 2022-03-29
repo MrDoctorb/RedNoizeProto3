@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - 'Well now, '
-  - "Well now, I can\u2019t spoil the surprise,"
-  - "Well now, I can\u2019t spoil the surprise, you rascal!"
-  - "You\u2019ll just have to go and see for yourself!"
+  - Seriously?
+  - Seriously? We still playing this charade?
+  - This place is gonna come tumbling down whether you want it to or not.
+  - You could be part of that!
+  - "Who wouldn\u2019t want to? "
+  - "You\u2019ve been imprisoned from the start, pal."
+  - ' Puppeted and played for a fool. '
+  - "Let\u2019s show them what happens when you play god."
 --- !u!114 &-7767168938215421467
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choices:
-  - What will I see?
+  - I only plan on leaving. Nothing more.
   button: {fileID: 4050199372877919147, guid: 4004101191aee8740948c5b94ba9a28c, type: 3}
 --- !u!114 &-4770997207139891242
 MonoBehaviour:
@@ -82,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choices:
-  - Where do I go?
+  - Where is the end?
   button: {fileID: 4050199372877919147, guid: 4004101191aee8740948c5b94ba9a28c, type: 3}
 --- !u!1102 &-4557403238308515228
 AnimatorState:
@@ -125,8 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - The next leg of your adventure is so close!
-  - "Electrifying, isn\u2019t it?"
+  - "You\u2019re almost there, pal."
+  - ' Almost at the end.'
+  - 'Once you get there, '
+  - "Once you get there, there\u2019s nothing between us and annihilating this godforsaken
+    place."
 --- !u!1102 &-4387046109450545601
 AnimatorState:
   serializedVersion: 6
@@ -389,11 +396,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - Ha!
-  - "Ha! I can see you\u2019re already eager to get going! "
-  - Take the path to the left.
-  - "t\u2019s the best route there is!"
-  - Plenty of sights to see!
+  - Just take a go ahead.
+  - "You\u2019re practically at its doorstep."
+  - Get going,
+  - Get going, and hold nothing back.
+  - "here\u2019s no point in restraint now."
+  - In fact, there never was.
 --- !u!114 &6831520319133868298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc62a8318d6575743a9ff42de45d09d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: -20, y: 1, z: 408}
+  endPos: {x: 1, y: 1, z: 415}
   speed: 5
 --- !u!1102 &7173193110089312358
 AnimatorState:
@@ -484,10 +492,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

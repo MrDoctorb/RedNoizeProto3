@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - 'Well now, '
-  - "Well now, I can\u2019t spoil the surprise,"
-  - "Well now, I can\u2019t spoil the surprise, you rascal!"
-  - "You\u2019ll just have to go and see for yourself!"
+  - So be it.
+  - Take the path behind me.
+  - Enjoy your fantasy.
 --- !u!114 &-7767168938215421467
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choices:
-  - What will I see?
+  - I intend to complete my journey.
   button: {fileID: 4050199372877919147, guid: 4004101191aee8740948c5b94ba9a28c, type: 3}
 --- !u!114 &-4770997207139891242
 MonoBehaviour:
@@ -82,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choices:
-  - Where do I go?
+  - There must be a way out.
   button: {fileID: 4050199372877919147, guid: 4004101191aee8740948c5b94ba9a28c, type: 3}
 --- !u!1102 &-4557403238308515228
 AnimatorState:
@@ -125,8 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - The next leg of your adventure is so close!
-  - "Electrifying, isn\u2019t it?"
+  - Still going,
+  - Still going, huh?
+  - "If I didn\u2019t know any better, I\u2019d call your resolve inspiring."
+  - " But you\u2019re running a fool\u2019s errand."
+  - "Turn back. You\u2019ll find no escape here."
 --- !u!1102 &-4387046109450545601
 AnimatorState:
   serializedVersion: 6
@@ -389,11 +391,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - Ha!
-  - "Ha! I can see you\u2019re already eager to get going! "
-  - Take the path to the left.
-  - "t\u2019s the best route there is!"
-  - Plenty of sights to see!
+  - You already know the way out.
+  - "And yet you\u2019ve chosen to come here,"
+  - "And yet you\u2019ve chosen to come here, of your own volition,"
+  - "And yet you\u2019ve chosen to come here, of your own volition, to forget it."
+  - This world IS your way out.
+  - "And it\u2019s pathetic."
 --- !u!114 &6831520319133868298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc62a8318d6575743a9ff42de45d09d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: -20, y: 1, z: 408}
+  endPos: {x: 20, y: 1, z: 408}
   speed: 5
 --- !u!1102 &7173193110089312358
 AnimatorState:
@@ -484,10 +487,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

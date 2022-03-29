@@ -14,7 +14,6 @@ public class DialougeMove : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         anime = animator;
-        Debug.Log(animator.GetComponent<NPCController>());
         Ref.player.StartCoroutine(MoveTo(endPos));
     }
 
@@ -27,6 +26,9 @@ public class DialougeMove : StateMachineBehaviour
         {
             Ref.player.StartCoroutine(MoveTo(pos));
         }
-
+        else
+        {
+            Destroy(anime.gameObject);
+        }
     }
 }
