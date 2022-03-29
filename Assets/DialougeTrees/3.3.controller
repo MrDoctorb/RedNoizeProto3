@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - I knew you had it in you!
-  - 'It was a hard journey, '
-  - 'It was a hard journey, and an even harder choice. '
-  - "I\u2019m proud of you."
+  - "That\u2019s what I\u2019m talking about!"
+  - Even after all that nonsense about not wanting revenge,
+  - "Even after all that nonsense about not wanting revenge,  I knew you\u2019d come
+    to your senses."
+  - I could see that rage in your eyes since first we met.
+  - "Now let\u2019s finish the job!"
 --- !u!114 &-8330705100879283075
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,7 +142,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1.3
+  m_Name: 3.3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Finished
@@ -148,19 +150,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Choice
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 2
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: DialougeDone
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -240,10 +242,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - Well,
-  - "Well, I can\u2019t say that I\u2019m not disappointed. "
-  - Even still,
-  - Even still, I hope you enjoyed your journey.
+  - Liar!
+  - Liar! Hypocrite!
+  - "You know that there\u2019s no way to escape without tearing this place down,"
+  - "You know that there\u2019s no way to escape without tearing this place down,
+    why won\u2019t you just admit it? "
+  - Get out of my face!
 --- !u!1107 &1538251409267561413
 AnimatorStateMachine:
   serializedVersion: 6
@@ -378,7 +382,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: YELLOW
+  m_Name: Red
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

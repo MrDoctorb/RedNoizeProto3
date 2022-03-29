@@ -28,7 +28,7 @@ public class DialougeMove : StateMachineBehaviour
         }
         else
         {
-            Destroy(anime.gameObject);
+            Destroy(anime.gameObject);  
         }
     }
 }
