@@ -8,6 +8,7 @@ TagManager:
   - Blue
   - Yellow
   - AnyMask
+  - TextPopup
   layers:
   - Default
   - TransparentFX

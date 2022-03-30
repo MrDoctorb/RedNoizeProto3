@@ -354,7 +354,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //gc.StartPopUp();
-        //other.gameObject.SetActive(false);
+        if(other.CompareTag("TextPopup"))
+        {
+            gc.StartPopUp();
+            other.gameObject.SetActive(false);
+        }
     }
 }
