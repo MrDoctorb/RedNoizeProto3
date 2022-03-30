@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using RedNoize;
 
 public class PlayerController : MonoBehaviour
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour
         cameraTint.enabled = false;
         cameraTint.material.color = new Color(1, .92f, .16f, .25f);
         ChangeMaskColor(2);
+
+        FadeToBlack(-.25f, "");
     }
 
     void Update()
@@ -137,7 +140,7 @@ public class PlayerController : MonoBehaviour
     void ColorControl()
     {
         //Only can turn mask on with this if
-        if(maskActive == false)
+        if (maskActive == false)
         {
             //Turns the mask on or off
             if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
@@ -163,7 +166,7 @@ public class PlayerController : MonoBehaviour
             {
                 ChangeMaskColor(selectedMask + 2);
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha1))
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 ChangeMaskColor(2);
             }
@@ -233,7 +236,7 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
         float currentSpeed = walkSpeed;
-        if(Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             currentSpeed *= 2;
         }
@@ -282,19 +285,81 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void PickUpMask()
+    public int PickUpMask(bool pickUp = true)
     {
-        ++masksCollected;
-        if (masksCollected > 3)
+        if (pickUp)
         {
-            masksCollected = 3;
-            Debug.LogWarning("You have picked up more than 3 masks! 0-0");
+            ++masksCollected;
+            if (masksCollected > 3)
+            {
+                masksCollected = 3;
+                Debug.LogWarning("You have picked up more than 3 masks! 0-0");
+            }
+        }
+        else
+        {
+            --masksCollected;
+            if (masksCollected > 0)
+            {
+                ChangeMaskColor(masksCollected - 1);
+            }
+            else
+            {
+                maskActive = false;
+                cameraTint.enabled = maskActive;
+                foreach (GameObject obj in currentColorObjs)
+                {
+                    obj.SetActive(!maskActive);
+                }
+            }
+        }
+        return masksCollected;
+    }
+
+    public void FadeToBlack(float fadeSpeed, string sceneToLoad)
+    {
+        print("3");
+        cameraTint.enabled = true;
+
+        if (fadeSpeed < 0)
+        {
+            cameraTint.material.color = new Color(0, 0, 0, 1);
+        }
+        else
+        {
+            cameraTint.material.color = new Color(0, 0, 0, 0);
+        }
+        StartCoroutine(Fade(fadeSpeed, sceneToLoad));
+    }
+
+    IEnumerator Fade(float fadeSpeed, string sceneToLoad)
+    {
+        print("4");
+        cameraTint.material.color += new Color(0, 0, 0, Time.deltaTime * fadeSpeed);
+        yield return new WaitForEndOfFrame();
+        if (cameraTint.material.color.a <= 0)
+        {
+            print("A");
+            cameraTint.enabled = false;
+        }
+        else if (cameraTint.material.color.a >= 1)
+        {
+            SceneManager.LoadScene(sceneToLoad);
+            print("C");
+        }
+        else
+        {
+            print("B");
+            StartCoroutine(Fade(fadeSpeed, sceneToLoad));
         }
     }
 
+
+
+
     private void OnTriggerEnter(Collider other)
     {
-        gc.StartPopUp();
-        other.gameObject.SetActive(false);
+        //gc.StartPopUp();
+        //other.gameObject.SetActive(false);
     }
 }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - Everything you see is real. Do not forget.
+  - What you believe cannot deny what you know.
+  - Go now, learn for yourself what lies ahead.
 --- !u!114 &-7767168938215421467
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choices:
-  - "I don\u2019t know."
+  - Nothing.
   button: {fileID: 4050199372877919147, guid: 4004101191aee8740948c5b94ba9a28c, type: 3}
 --- !u!1102 &-4557403238308515228
 AnimatorState:
@@ -119,20 +120,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!114 &-4528180966626126844
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c343bd55e57d6fe47b612dd3b0e1a572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectKeys:
-  - Wall
 --- !u!114 &-4464920620896407094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,8 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - "It\u2019s been a long time since anyone has been through here."
-  - ' What are you looking for?'
+  - "You\u2019ve come a long way since last we spoke. "
+  - 'What do you feel now, '
+  - What do you feel now, having made it this far?
 --- !u!1102 &-4387046109450545601
 AnimatorState:
   serializedVersion: 6
@@ -280,14 +268,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - 
+  - I do not believe you.
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 0.1
+  m_Name: 0.2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Finished
@@ -383,6 +371,20 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 1040, y: -90, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 8191654081898498601}
+--- !u!114 &1745635776675654869
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc62a8318d6575743a9ff42de45d09d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPos: {x: 0, y: -6, z: 0}
+  speed: 1000
 --- !u!1102 &3653581458842006285
 AnimatorState:
   serializedVersion: 6
@@ -396,7 +398,7 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: -1367685339905122561}
-  - {fileID: 7998440077337523944}
+  - {fileID: 1745635776675654869}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -424,9 +426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialouge:
-  - 'You do not have to. '
-  - Given time, it will come to you.
-  - ' Pay close attention to the journey.'
+  - "I\u2019m afraid that is not the truth. "
+  - You have encountered much,
+  - 'You have encountered much, and have felt much in turn. '
+  - You may not understand all that you feel now,
+  - 'You may not understand all that you feel now, but it will soon become clear. '
 --- !u!1102 &7173193110089312358
 AnimatorState:
   serializedVersion: 6
@@ -441,7 +445,6 @@ AnimatorState:
   - {fileID: -5415967369901674362}
   m_StateMachineBehaviours:
   - {fileID: -652003832165669354}
-  - {fileID: -4528180966626126844}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -456,20 +459,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!114 &7998440077337523944
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc62a8318d6575743a9ff42de45d09d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endPos: {x: 0, y: -6, z: 0}
-  speed: 1000
 --- !u!1102 &8191654081898498601
 AnimatorState:
   serializedVersion: 6
