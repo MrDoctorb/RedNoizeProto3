@@ -318,7 +318,6 @@ public class PlayerController : MonoBehaviour
 
     public void FadeToBlack(float fadeSpeed, string sceneToLoad)
     {
-        print("3");
         cameraTint.enabled = true;
 
         if (fadeSpeed < 0)
@@ -334,22 +333,18 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Fade(float fadeSpeed, string sceneToLoad)
     {
-        print("4");
         cameraTint.material.color += new Color(0, 0, 0, Time.deltaTime * fadeSpeed);
         yield return new WaitForEndOfFrame();
         if (cameraTint.material.color.a <= 0)
         {
-            print("A");
             cameraTint.enabled = false;
         }
         else if (cameraTint.material.color.a >= 1)
         {
             SceneManager.LoadScene(sceneToLoad);
-            print("C");
         }
         else
         {
-            print("B");
             StartCoroutine(Fade(fadeSpeed, sceneToLoad));
         }
     }
