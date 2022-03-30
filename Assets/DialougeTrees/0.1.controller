@@ -426,7 +426,7 @@ MonoBehaviour:
   dialouge:
   - 'You do not have to. '
   - Given time, it will come to you.
-  - ' Pay close attention to the journey.'
+  - Pay close attention to the journey.
 --- !u!1102 &7173193110089312358
 AnimatorState:
   serializedVersion: 6
