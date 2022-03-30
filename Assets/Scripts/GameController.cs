@@ -21,8 +21,7 @@ public class GameController : MonoBehaviour
     [SerializeField] TMP_Text popText;
 
     public List<string> popList = new List<string>();
-    public bool isTriggered;
-
+   
     private void Start()
     {
         currentText = 0;
