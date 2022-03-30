@@ -7792,7 +7792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12350050f648b294b8b0d9150362cd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Win
+  sceneToLoad: Menu
 --- !u!65 &472603202
 BoxCollider:
   m_ObjectHideFlags: 0
