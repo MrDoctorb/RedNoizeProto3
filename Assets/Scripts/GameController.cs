@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
         pc = FindObjectOfType<PlayerController>();
 
         SetImagePOs();
-      SetPopUps();
+        SetPopUps();
     }
     void Update()
     {
@@ -37,10 +37,11 @@ public class GameController : MonoBehaviour
     }
     public void StartPopUp()
     {
-       
-          StartCoroutine(Text(popList[currentText]));
-          currentText++;
-    
+        if (currentText < popList.Count)
+        {
+            StartCoroutine(Text(popList[currentText]));
+            currentText++;
+        }
     }
 
     private void MaskIndicator()
@@ -60,7 +61,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(4f);
         popText.gameObject.SetActive(false);
     }
-  
+
     private void SetPopUps()
     {
         popList.Add("Left click to interact");
