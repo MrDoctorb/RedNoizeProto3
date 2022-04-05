@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using RedNoize;
 
 public class DialogueChoice : StateMachineBehaviour
 {
@@ -15,6 +16,7 @@ public class DialogueChoice : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Ref.dialougeText.text = "";
         anime = animator;
         allButtons = new GameObject[choices.Length];
         canvas = GameObject.FindObjectOfType<Canvas>();
