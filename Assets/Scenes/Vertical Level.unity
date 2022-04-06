@@ -5223,7 +5223,7 @@ GameObject:
   - component: {fileID: 265585904}
   - component: {fileID: 265585903}
   - component: {fileID: 265585902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '>Blue Window'
   m_TagString: Blue
   m_Icon: {fileID: 0}
@@ -17990,7 +17990,7 @@ GameObject:
   - component: {fileID: 984746663}
   - component: {fileID: 984746662}
   - component: {fileID: 984746661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '>Yellow Window'
   m_TagString: Yellow
   m_Icon: {fileID: 0}
@@ -27142,7 +27142,7 @@ GameObject:
   - component: {fileID: 1473109421}
   - component: {fileID: 1473109420}
   - component: {fileID: 1473109419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '*RedWindow (16)'
   m_TagString: Red
   m_Icon: {fileID: 0}
