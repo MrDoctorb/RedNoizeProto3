@@ -70,8 +70,16 @@ public class PlayerController : MonoBehaviour
         {
             if (ray.collider.gameObject.layer == 6 || ray.collider.GetComponent<NPCController>())
             {
-                print("AAA");
+                cursorIndicator.SetActive(true);
             }
+            else
+            {
+                cursorIndicator.SetActive(false);
+            }
+        }
+        else
+        {
+            cursorIndicator.SetActive(false);
         }
         Debug.DrawRay(cam.transform.position, cam.transform.forward * grabDistance, Color.red);
 

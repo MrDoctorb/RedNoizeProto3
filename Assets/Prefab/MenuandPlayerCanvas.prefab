@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 225}
-  m_SizeDelta: {x: 20, y: 250}
+  m_SizeDelta: {x: 20, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2638658204943797430
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1740,7 +1740,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 225, y: 0}
-  m_SizeDelta: {x: 250, y: 20}
+  m_SizeDelta: {x: 125, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4325116880623153956
 CanvasRenderer:
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1816,7 +1816,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -225, y: 0}
-  m_SizeDelta: {x: 250, y: 20}
+  m_SizeDelta: {x: 125, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4553417835975842629
 CanvasRenderer:
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1892,7 +1892,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -225}
-  m_SizeDelta: {x: 20, y: 250}
+  m_SizeDelta: {x: 20, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9044617258208216272
 CanvasRenderer:
@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
