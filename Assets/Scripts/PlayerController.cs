@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public int selectedMask;
     List<GameObject> currentColorObjs = new List<GameObject>();
     Rigidbody heldObject;
+    [SerializeField] GameObject cursorIndicator;
 
     GameController gc;
     void Start()
@@ -63,12 +64,28 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void TryInteract()
     {
+        RaycastHit ray;
+        Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, grabDistance);
+        if (ray.collider != null)
+        {
+            if (ray.collider.gameObject.layer == 6 || ray.collider.GetComponent<NPCController>())
+            {
+                cursorIndicator.SetActive(true);
+            }
+            else
+            {
+                cursorIndicator.SetActive(false);
+            }
+        }
+        else
+        {
+            cursorIndicator.SetActive(false);
+        }
         Debug.DrawRay(cam.transform.position, cam.transform.forward * grabDistance, Color.red);
 
         //If Left Click and no held object,try to interact
         if (Input.GetMouseButtonDown(0) && heldObject == null)
         {
-            RaycastHit ray;
             Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, grabDistance, layersToGrab);
             if (ray.collider != null)
             {
@@ -351,7 +368,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("TextPopup"))
+        if (other.CompareTag("TextPopup"))
         {
             gc.StartPopUp();
             other.gameObject.SetActive(false);
