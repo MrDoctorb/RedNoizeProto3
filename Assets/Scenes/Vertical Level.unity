@@ -4755,8 +4755,8 @@ GameObject:
   - component: {fileID: 242543407}
   - component: {fileID: 242543406}
   m_Layer: 0
-  m_Name: '*Yellow Window (14)'
-  m_TagString: Yellow
+  m_Name: '* Window (14)'
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4794,7 +4794,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 53a3ca54f785f7240917eb46b84130b9, type: 2}
+  - {fileID: 2100000, guid: c0271511a09d72048b40c2f777f6b761, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
