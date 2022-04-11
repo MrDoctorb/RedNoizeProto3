@@ -17,13 +17,19 @@ public class DoorController : MonoBehaviour, IReactive
 
     public void TurnOff()
     {
-        rend.enabled = isEnabledByDefault;
-        col.enabled = isEnabledByDefault;
+        if (!CompareTag(PlayerController.curColor))
+        {
+            rend.enabled = isEnabledByDefault;
+            col.enabled = isEnabledByDefault;
+        }
     }
 
     public void TurnOn()
     {
-        rend.enabled = !isEnabledByDefault;
-        col.enabled = !isEnabledByDefault;
+        if (!CompareTag(PlayerController.curColor))
+        {
+            rend.enabled = !isEnabledByDefault;
+            col.enabled = !isEnabledByDefault;
+        }
     }
 }

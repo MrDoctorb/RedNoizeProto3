@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody heldObject;
     [SerializeField] GameObject cursorIndicator;
 
+    public static string curColor = "Red";
+
     GameController gc;
     void Start()
     {
@@ -241,6 +243,8 @@ public class PlayerController : MonoBehaviour
                 return;
         }
 
+        curColor = colorString;
+
         if (heldObject != null && heldObject.CompareTag(colorString))
         {
             Drop();
@@ -284,7 +288,6 @@ public class PlayerController : MonoBehaviour
             if (enable)
             {
                 Rigidbody rb = obj.GetComponent<Rigidbody>();
-                print("Velocity Pulled " + obj.name + " <- " + rb.velocity);
                 rb.constraints = RigidbodyConstraints.None;
                 rb.velocity = currentObjVelocities[0];
                 currentObjVelocities.RemoveAt(0);
@@ -294,7 +297,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Rigidbody rb = obj.GetComponent<Rigidbody>();
-                print("Velocity Stored " + obj.name + " -> " + rb.velocity);
                 currentObjVelocities.Add(rb.velocity);
                 rb.constraints = RigidbodyConstraints.FreezeAll;
             }
