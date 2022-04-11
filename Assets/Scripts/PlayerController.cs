@@ -18,8 +18,11 @@ public class PlayerController : MonoBehaviour
     public bool maskActive = false;
     public int selectedMask;
     List<GameObject> currentColorObjs = new List<GameObject>();
+    List<Vector3> currentObjVelocities = new List<Vector3>();
     Rigidbody heldObject;
     [SerializeField] GameObject cursorIndicator;
+
+    public static string curColor = "Red";
 
     GameController gc;
     void Start()
@@ -36,17 +39,30 @@ public class PlayerController : MonoBehaviour
 
 
         currentColorObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Red"));
+        foreach (GameObject obj in currentColorObjs)
+        {
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                currentObjVelocities.Add(rb.velocity);
+            }
+        }
 
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
+        /*foreach (GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
         {
             currentColorObjs.Add(obj);
-        }
+        }*/
 
         cameraTint.enabled = false;
         cameraTint.material.color = new Color(1, .92f, .16f, .25f);
         ChangeMaskColor(2);
 
         FadeToBlack(-.25f, "");
+
+
+        PickUpMask();
+        PickUpMask();
+        PickUpMask();
     }
 
     void Update()
@@ -166,7 +182,8 @@ public class PlayerController : MonoBehaviour
                 ChangeMaskColor(selectedMask);
                 foreach (GameObject obj in currentColorObjs)
                 {
-                    obj.SetActive(!maskActive);
+                    // obj.SetActive(!maskActive);
+                    Enable(obj, !maskActive);
                     cameraTint.enabled = maskActive;
                 }
             }
@@ -226,26 +243,66 @@ public class PlayerController : MonoBehaviour
                 return;
         }
 
-        foreach (GameObject obj in currentColorObjs)
+        curColor = colorString;
+
+        if (heldObject != null && heldObject.CompareTag(colorString))
         {
-            obj.SetActive(true);
+            Drop();
         }
 
+
+
+        foreach (GameObject obj in currentColorObjs)
+        {
+            //  obj.SetActive(true);
+            Enable(obj, true);
+        }
+        currentObjVelocities.Clear();
 
         currentColorObjs = new List<GameObject>(GameObject.FindGameObjectsWithTag(colorString));
 
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
+        /*foreach (GameObject obj in GameObject.FindGameObjectsWithTag("AnyMask"))
         {
             currentColorObjs.Add(obj);
-        }
+        }*/
 
         foreach (GameObject obj in currentColorObjs)
         {
-            obj.SetActive(false);
+            // obj.SetActive(false);
+            Enable(obj, false);
         }
 
 
     }
+
+    void Enable(GameObject obj, bool enable)
+    {
+        obj.GetComponent<MeshRenderer>().enabled = enable;
+        foreach (Collider col in obj.GetComponents<Collider>())
+        {
+            col.enabled = enable;
+        }
+
+        if (obj.GetComponent<Rigidbody>())
+        {
+            if (enable)
+            {
+                Rigidbody rb = obj.GetComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.None;
+                rb.velocity = currentObjVelocities[0];
+                currentObjVelocities.RemoveAt(0);
+
+
+            }
+            else
+            {
+                Rigidbody rb = obj.GetComponent<Rigidbody>();
+                currentObjVelocities.Add(rb.velocity);
+                rb.constraints = RigidbodyConstraints.FreezeAll;
+            }
+        }
+    }
+
 
     /// <summary>
     /// Basic character Movement
@@ -326,7 +383,8 @@ public class PlayerController : MonoBehaviour
                 cameraTint.enabled = maskActive;
                 foreach (GameObject obj in currentColorObjs)
                 {
-                    obj.SetActive(!maskActive);
+                    //obj.SetActive(!maskActive);
+                    Enable(obj, !maskActive);
                 }
             }
         }
