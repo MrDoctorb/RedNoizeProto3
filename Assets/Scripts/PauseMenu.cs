@@ -23,7 +23,6 @@ public class PauseMenu : MonoBehaviour
     {
         Ref.dialougeText = dialougeText;
 
-
         playerController = FindObjectOfType<PlayerController>();
         mouseBar.maxValue = cameraMax;
         mouseBar.value = player.GetComponent<PlayerController>().cameraSensitivity;
@@ -89,7 +88,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Slider()
     {
-       playerController.cameraSensitivity = mouseBar.value;
+        playerController.cameraSensitivity = mouseBar.value;
         camValue.text = mouseBar.value.ToString("F0");
     }
 }
