@@ -1204,7 +1204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197819492}
   m_Layer: 0
-  m_Name: '[2] Vertical Slice Level 1-----------------------'
+  m_Name: '[2] Level 1: Moving Platform-----------------------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2200,7 +2200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 562991691}
   m_Layer: 0
-  m_Name: '[3] Vertical Slice Level 2-----------------------'
+  m_Name: '[3] Level 2 Seems Familiar...-----------------------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4189,7 +4189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934645710}
   m_LocalRotation: {x: -0, y: -0, z: 0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 33.8, y: 5.39, z: 1.1}
+  m_LocalPosition: {x: 6.4, y: 5.39, z: 1.1}
   m_LocalScale: {x: 98.337814, y: 10.787209, z: 3.515736}
   m_ConstrainProportionsScale: 0
   m_Children: []
