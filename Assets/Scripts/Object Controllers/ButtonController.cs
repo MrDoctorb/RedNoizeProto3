@@ -31,28 +31,29 @@ public class ButtonController : MonoBehaviour
 
     private void Update()
     {
-        if(collidingObjs.Count >= 1)
+        if (collidingObjs.Count >= 1)
         {
             foreach (GameObject obj in collidingObjs)
             {
-                if (!obj.activeSelf)
+                if (obj.activeSelf)
                 {
-                    ChangeButtonState(false);
+                    ChangeButtonState(true);
                     return;
                 }
             }
-            ChangeButtonState(true);
+            ChangeButtonState(false);
         }
         else
         {
             ChangeButtonState(false);
         }
+
     }
 
     void ChangeButtonState(bool newState)
-    {
+    {/*
         if (buttonPressed != newState)
-        {
+        {*/
             buttonPressed = newState;
             foreach (IReactive output in outputs)
             {
@@ -65,6 +66,6 @@ public class ButtonController : MonoBehaviour
                     output.TurnOff();
                 }
             }
-        }
+        //}
     }
 }
