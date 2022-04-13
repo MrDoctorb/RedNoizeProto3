@@ -307,4 +307,10 @@ MonoBehaviour:
   layersToGrab:
     serializedVersion: 2
     m_Bits: 64
+  notPlayer:
+    serializedVersion: 2
+    m_Bits: 383
+  masksCollected: 0
   maskActive: 0
+  selectedMask: 0
+  cursorIndicator: {fileID: 0}

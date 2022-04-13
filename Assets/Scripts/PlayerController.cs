@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float holdDistance = 1, grabDistance = 1, throwPower;
     [SerializeField] Renderer cameraTint;
     [SerializeField] LayerMask layersToGrab;
+    [SerializeField] LayerMask notPlayer;
     [SerializeField] int masksCollected = 0;
     bool grounded = true;
     public bool maskActive = false;
@@ -78,6 +79,9 @@ public class PlayerController : MonoBehaviour
             Movement();
             ColorControl();
             TryInteract();
+
+
+            //CheckForColorCollision();
         }
     }
     /// <summary>
@@ -277,7 +281,24 @@ public class PlayerController : MonoBehaviour
             Enable(obj, false);
         }
 
+       //CheckForColorCollision();
+    }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector3(.5f, 1, .5f));
+    }
+
+    void CheckForColorCollision()
+    {
+        print(Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .1f), Vector3.up, Quaternion.identity, Mathf.Infi, notPlayer));
+        
+        while (Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .25f), Vector3.zero))
+        {
+            print("I am currently colliding with something, breaking so I don't infinite loop");
+            break;
+        }
     }
 
     void Enable(GameObject obj, bool enable)
