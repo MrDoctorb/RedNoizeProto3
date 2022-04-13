@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     GameController gc;
     void Start()
     {
+
+        cursorIndicator = GameObject.Find("Indicator");
         gc = FindObjectOfType<GameController>();
         Ref.player = this;
 
