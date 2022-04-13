@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
 
     void CheckForColorCollision()
     {
-        print(Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .1f), Vector3.up, Quaternion.identity, Mathf.Infi, notPlayer));
+        print(Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .1f), Vector3.up, Quaternion.identity, Mathf.Infinity, notPlayer));
         
         while (Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .25f), Vector3.zero))
         {
