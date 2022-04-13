@@ -28,7 +28,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-        cursorIndicator = GameObject.Find("Indicator");
+        if(cursorIndicator == null)
+        {
+            cursorIndicator = GameObject.Find("ReticleTEMP").transform.GetChild(0).gameObject;
+        }
         gc = FindObjectOfType<GameController>();
         Ref.player = this;
 
