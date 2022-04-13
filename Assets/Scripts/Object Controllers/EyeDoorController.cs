@@ -14,20 +14,16 @@ public class EyeDoorController : MonoBehaviour, IReactive
 
     public void TurnOff()
     {
-        print("A");
         if (!CompareTag(PlayerController.curColor))
         {
-            print("B");
             anime.SetBool("Open", isOpenByDefault);
         }
     }
 
     public void TurnOn()
     {
-        print("C");
         if (!CompareTag(PlayerController.curColor))
         {
-            print("D");
             anime.SetBool("Open", !isOpenByDefault);
         }
     }
