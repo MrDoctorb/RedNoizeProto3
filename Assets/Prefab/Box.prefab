@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4436629260942535203}
   - component: {fileID: 4436629260942535202}
   - component: {fileID: 4436629260942535201}
-  - component: {fileID: 4436629260942535200}
-  - component: {fileID: 1367303192287220576}
+  - component: {fileID: 2034524706950083293}
+  - component: {fileID: 984824981262231702}
   m_Layer: 6
   m_Name: Box
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4436629260942535206}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4493585093827132993, guid: 79073b52ba05b064b8a02410cc51d430, type: 3}
 --- !u!23 &4436629260942535201
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4436629260942535200
+--- !u!65 &2034524706950083293
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,9 +96,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.021793146, y: 0.022482833, z: 0.020910785}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1367303192287220576
+--- !u!54 &984824981262231702
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 2
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
