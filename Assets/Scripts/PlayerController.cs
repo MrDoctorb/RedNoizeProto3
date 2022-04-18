@@ -303,7 +303,8 @@ public class PlayerController : MonoBehaviour
 
     void Enable(GameObject obj, bool enable)
     {
-        obj.GetComponent<MeshRenderer>().enabled = enable;
+        obj.SetActive(enable);
+        /*obj.GetComponent<MeshRenderer>().enabled = enable;
         foreach (Collider col in obj.GetComponents<Collider>())
         {
             col.enabled = enable;
@@ -326,7 +327,7 @@ public class PlayerController : MonoBehaviour
                 currentObjVelocities.Add(rb.velocity);
                 rb.constraints = RigidbodyConstraints.FreezeAll;
             }
-        }
+        }*/
     }
 
 
