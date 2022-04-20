@@ -187,6 +187,7 @@ public class PlayerController : MonoBehaviour
             //Turns the mask on or off
             if (Input.GetKeyDown(KeyCode.F) && masksCollected > 0)
             {
+                StopAllCoroutines();
                 maskActive = !maskActive;
                 ChangeMaskColor(selectedMask);
                 foreach (GameObject obj in currentColorObjs)
@@ -230,6 +231,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="color">0 = red, 1 = blue, 2 = yellow</param>
     public void ChangeMaskColor(int color)
     {
+        cameraTint.enabled = true;
         selectedMask = color;
         selectedMask %= 3;
         selectedMask = Mathf.Clamp(selectedMask, 3 - masksCollected, 2);
@@ -304,6 +306,12 @@ public class PlayerController : MonoBehaviour
     void Enable(GameObject obj, bool enable)
     {
         obj.SetActive(enable);
+        /*if(!enable)
+        {
+            GameObject tempObj = Instantiate(obj, obj.transform.position, obj.transform.rotation);
+            tempObj.tag = "Outline";
+        }*/
+
         /*obj.GetComponent<MeshRenderer>().enabled = enable;
         foreach (Collider col in obj.GetComponents<Collider>())
         {

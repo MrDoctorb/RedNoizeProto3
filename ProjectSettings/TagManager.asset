@@ -9,6 +9,7 @@ TagManager:
   - Yellow
   - AnyMask
   - TextPopup
+  - Outline
   layers:
   - Default
   - TransparentFX
