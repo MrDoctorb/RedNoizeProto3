@@ -19,8 +19,6 @@ public class MovingPlatform : MonoBehaviour
 
     IEnumerator MoveTo(Vector3 point)
     {
-        print((point - transform.position).normalized * speed);
-
         while (Vector3.Distance(transform.position, point) > .1f)
         {
             rb.velocity = (point - transform.position).normalized * speed;
