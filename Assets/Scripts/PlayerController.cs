@@ -370,21 +370,22 @@ public class PlayerController : MonoBehaviour
 
         Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * currentSpeed,
                                 rb.velocity.y, Input.GetAxis("Vertical") * currentSpeed);
-
-
-        //Change the world direction to relative movement
-        rb.velocity = transform.TransformDirection(worldDirection);
-
-
-        Debug.DrawLine(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0), Color.green);
-        //Checking Jumping Stuff
-        grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
-
-        // print(grounded);
-        //Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (worldDirection.x != 0 || worldDirection.z != 0)
         {
-            rb.AddForce(0, jumpForce, 0);
+            //Change the world direction to relative movement
+            rb.velocity = transform.TransformDirection(worldDirection);
+
+
+            Debug.DrawLine(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0), Color.green);
+            //Checking Jumping Stuff
+            grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
+
+            // print(grounded);
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            {
+                rb.AddForce(0, jumpForce, 0);
+            }
         }
     }
 
@@ -514,7 +515,7 @@ public class PlayerController : MonoBehaviour
 
     Color StringToColor(string colorName)
     {
-        switch(colorName)
+        switch (colorName)
         {
             case "Red":
                 return Color.red;
