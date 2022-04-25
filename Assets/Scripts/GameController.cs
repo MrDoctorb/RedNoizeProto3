@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
 
     PlayerController pc;
 
-    private Vector2 offset = new Vector2(-5f, 5f);
+    private Vector2 offset = new Vector2(-3f, 5f);
     private int currentText;
 
     [SerializeField] TMP_Text popText;
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
         currentText = 0;
         pc = FindObjectOfType<PlayerController>();
 
-        SetImagePOs();
+      //  SetImagePOs();
         SetPopUps();
     }
     void Update()
