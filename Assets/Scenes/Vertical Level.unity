@@ -14840,6 +14840,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 707232966846741158, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707232966846741158, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707232966846741158, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030305661936129, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306034579367, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306034579367, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306286216393, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306286216393, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306326675517, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306326675517, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306326675517, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306903742580, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024030306903742580, guid: 44b94473b91f96141baad9b331d12734, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3924453918554043729, guid: 44b94473b91f96141baad9b331d12734, type: 3}
       propertyPath: m_RootOrder
       value: 0
