@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     List<GameObject> currentColorObjs = new List<GameObject>();
     List<Vector3> currentObjVelocities = new List<Vector3>();
     Rigidbody heldObject;
-    [SerializeField] GameObject cursorIndicator;
+    [SerializeField] GameObject cursorIndicator, outlineObj;
 
     public static string curColor = "Red";
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-        if(cursorIndicator == null)
+        if (cursorIndicator == null)
         {
             cursorIndicator = GameObject.Find("ReticleTEMP").transform.GetChild(0).gameObject;
         }
@@ -231,6 +231,14 @@ public class PlayerController : MonoBehaviour
     /// <param name="color">0 = red, 1 = blue, 2 = yellow</param>
     public void ChangeMaskColor(int color)
     {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Outline"))
+        {
+            Destroy(obj);
+        }
+
+
+
+
         cameraTint.enabled = true;
         selectedMask = color;
         selectedMask %= 3;
@@ -261,12 +269,16 @@ public class PlayerController : MonoBehaviour
             Drop();
         }
 
-
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Outline"))
+        {
+            Destroy(obj);
+        }
 
         foreach (GameObject obj in currentColorObjs)
         {
             //  obj.SetActive(true);
             Enable(obj, true);
+            //  GameObject temp = Instantiate(obj, obj.transform.position, obj.transform.rotation);
         }
         currentObjVelocities.Clear();
 
@@ -283,7 +295,7 @@ public class PlayerController : MonoBehaviour
             Enable(obj, false);
         }
 
-       //CheckForColorCollision();
+        //CheckForColorCollision();
     }
 
     private void OnDrawGizmos()
@@ -295,7 +307,7 @@ public class PlayerController : MonoBehaviour
     void CheckForColorCollision()
     {
         print(Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .1f), Vector3.up, Quaternion.identity, Mathf.Infinity, notPlayer));
-        
+
         while (Physics.BoxCast(transform.position, new Vector3(.25f, .5f, .25f), Vector3.zero))
         {
             print("I am currently colliding with something, breaking so I don't infinite loop");
@@ -306,11 +318,13 @@ public class PlayerController : MonoBehaviour
     void Enable(GameObject obj, bool enable)
     {
         obj.SetActive(enable);
-        /*if(!enable)
+        if (enable == false)
         {
-            GameObject tempObj = Instantiate(obj, obj.transform.position, obj.transform.rotation);
-            tempObj.tag = "Outline";
-        }*/
+            GameObject tempObj = Instantiate(outlineObj, obj.transform.position, obj.transform.rotation);
+            tempObj.transform.localScale = obj.transform.lossyScale;
+            tempObj.GetComponent<MeshFilter>().mesh = obj.GetComponent<MeshFilter>().mesh;
+            tempObj.GetComponent<Renderer>().material.color = StringToColor(obj.tag);
+        }
 
         /*obj.GetComponent<MeshRenderer>().enabled = enable;
         foreach (Collider col in obj.GetComponents<Collider>())
@@ -356,21 +370,22 @@ public class PlayerController : MonoBehaviour
 
         Vector3 worldDirection = new Vector3(Input.GetAxis("Horizontal") * currentSpeed,
                                 rb.velocity.y, Input.GetAxis("Vertical") * currentSpeed);
-
-
-        //Change the world direction to relative movement
-        rb.velocity = transform.TransformDirection(worldDirection);
-
-
-        Debug.DrawLine(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0), Color.green);
-        //Checking Jumping Stuff
-        grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
-
-        // print(grounded);
-        //Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (worldDirection.x != 0 || worldDirection.z != 0)
         {
-            rb.AddForce(0, jumpForce, 0);
+            //Change the world direction to relative movement
+            rb.velocity = transform.TransformDirection(worldDirection);
+
+
+            Debug.DrawLine(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0), Color.green);
+            //Checking Jumping Stuff
+            grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
+
+            // print(grounded);
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            {
+                rb.AddForce(0, jumpForce, 0);
+            }
         }
     }
 
@@ -465,6 +480,51 @@ public class PlayerController : MonoBehaviour
         {
             gc.StartPopUp();
             other.gameObject.SetActive(false);
+        }
+    }
+
+    string NumToColorName(int colorNum)
+    {
+        switch (colorNum)
+        {
+            case 0:
+                return "Red";
+            case 1:
+                return "Blue";
+            case 2:
+                return "Yellow";
+            default:
+                return "Invalid Color";
+        }
+    }
+
+    Color NumToColor(int colorNum)
+    {
+        switch (colorNum)
+        {
+            case 0:
+                return Color.red;
+            case 1:
+                return Color.blue;
+            case 2:
+                return Color.yellow;
+            default:
+                return Color.black;
+        }
+    }
+
+    Color StringToColor(string colorName)
+    {
+        switch (colorName)
+        {
+            case "Red":
+                return Color.red;
+            case "Blue":
+                return Color.blue;
+            case "Yellow":
+                return Color.yellow;
+            default:
+                return Color.black;
         }
     }
 }

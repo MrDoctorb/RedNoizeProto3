@@ -314,3 +314,4 @@ MonoBehaviour:
   maskActive: 0
   selectedMask: 0
   cursorIndicator: {fileID: 0}
+  outlineObj: {fileID: 1844164612716130653, guid: e3ffcc6d12eb6bd4e89de05dc955f302, type: 3}
