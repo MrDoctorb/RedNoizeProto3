@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpenByDefault: 0
+  door: {fileID: 8300000, guid: 1346059db3065e4439083b3b7f0fbd14, type: 3}
 --- !u!1001 &391890286533474845
 PrefabInstance:
   m_ObjectHideFlags: 0

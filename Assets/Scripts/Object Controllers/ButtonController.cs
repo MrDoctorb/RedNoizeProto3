@@ -60,7 +60,7 @@ public class ButtonController : MonoBehaviour
                 if (buttonPressed)
                 {
                     output.TurnOn();
-                }
+            }
                 else
                 {
                     output.TurnOff();
