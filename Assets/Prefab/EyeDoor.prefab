@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 391890286312236808}
   - component: {fileID: 391890286312236810}
   - component: {fileID: 3860226233275993151}
+  - component: {fileID: 5098735729160186841}
   m_Layer: 0
   m_Name: EyeDoor
   m_TagString: Untagged
@@ -237,6 +238,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5098735729160186841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391890286312236815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &391890286533474845
 PrefabInstance:
   m_ObjectHideFlags: 0

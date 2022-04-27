@@ -241,6 +241,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585186, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
+      propertyPath: throwPower
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620674692962585186, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: holdDistance
       value: 3
       objectReference: {fileID: 0}
@@ -13134,8 +13138,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870082848}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 13.26, y: -10.4, z: -2.1}
-  m_LocalScale: {x: 1.2070897, y: 2.1283302, z: 2.532652}
+  m_LocalPosition: {x: 12.64134, y: -10.4, z: -2.1}
+  m_LocalScale: {x: 2.4444048, y: 2.1283302, z: 2.532652}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 985390478}
