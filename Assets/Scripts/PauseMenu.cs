@@ -9,11 +9,11 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject optionMenu;
-    [SerializeField] TextMeshProUGUI camValue;
+    [SerializeField] TextMeshProUGUI mouseValue, musicValue, sfxValue;
     private bool isPaused;
     private bool optionOpen = false;
     private PlayerController playerController;
-    [SerializeField] Slider mouseBar;
+    [SerializeField] Slider mouseSlider, musicSlider, sfxSlider;
     [SerializeField] GameObject player;
     private float cameraMax = 5;
 
@@ -24,8 +24,8 @@ public class PauseMenu : MonoBehaviour
         Ref.dialougeText = dialougeText;
 
         playerController = FindObjectOfType<PlayerController>();
-        mouseBar.maxValue = cameraMax;
-        mouseBar.value = player.GetComponent<PlayerController>().cameraSensitivity;
+        mouseSlider.maxValue = cameraMax;
+        mouseSlider.value = player.GetComponent<PlayerController>().cameraSensitivity;
     }
 
     // Update is called once per frame
@@ -86,9 +86,19 @@ public class PauseMenu : MonoBehaviour
         optionOpen = false;
     }
 
-    public void Slider()
+    public void MouseSlider()
     {
-        playerController.cameraSensitivity = mouseBar.value;
-        camValue.text = mouseBar.value.ToString("F0");
+        playerController.cameraSensitivity = mouseSlider.value;
+        mouseValue.text = mouseSlider.value.ToString("F0");
+    }
+
+    public void MusicSlider()
+    {
+        musicValue.text = musicSlider.value.ToString("F0");
+    }
+
+    public void SfxSlider()
+    {
+        sfxValue.text = sfxSlider.value.ToString("F0");
     }
 }
