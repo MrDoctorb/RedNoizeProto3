@@ -9,7 +9,7 @@ public class Playsound : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        AudioSource.PlayClipAtPoint(door, animator.transform.position);
+        animator.GetComponent<AudioSource>().PlayOneShot(door); //(door, animator.transform.position, 10f);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
