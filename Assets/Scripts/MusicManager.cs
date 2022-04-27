@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     public static float bgVolume;
     public static float sfxVolume;
     [SerializeField] AudioMixerGroup bg;
+    [SerializeField] AudioMixerGroup sfx;
     // Start is called before the first frame update
     void Start()
     {
