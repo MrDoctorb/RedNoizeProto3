@@ -11479,6 +11479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 4 Eye Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: m_Volume
+      value: 0.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
 --- !u!114 &1631833192 stripped
@@ -15567,11 +15571,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6485275978146027851, guid: 44b94473b91f96141baad9b331d12734, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 24.2
+      value: 24.199951
       objectReference: {fileID: 0}
     - target: {fileID: 6485275978146027851, guid: 44b94473b91f96141baad9b331d12734, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.7
+      value: -25.700012
       objectReference: {fileID: 0}
     - target: {fileID: 6485275978154780410, guid: 44b94473b91f96141baad9b331d12734, type: 3}
       propertyPath: m_Sprite
