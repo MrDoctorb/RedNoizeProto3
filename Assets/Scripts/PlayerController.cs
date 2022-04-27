@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int masksCollected = 0;
     bool grounded = true;
     public bool maskActive = false;
+    bool canSwitchMask = true;
     public int selectedMask;
     List<GameObject> currentColorObjs = new List<GameObject>();
     List<Vector3> currentObjVelocities = new List<Vector3>();
@@ -199,7 +200,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (maskActive)
+        if (maskActive && canSwitchMask)
         {
             //Scroll wheel switches colors
             if (Input.mouseScrollDelta.y > 0)
@@ -231,6 +232,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="color">0 = red, 1 = blue, 2 = yellow</param>
     public void ChangeMaskColor(int color)
     {
+        StartCoroutine(MaskCooldown());
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Outline"))
         {
             Destroy(obj);
@@ -296,6 +298,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //CheckForColorCollision();
+    }
+
+    IEnumerator MaskCooldown()
+    {
+        canSwitchMask = false;
+        yield return new WaitForSeconds(.25f);
+        canSwitchMask = true;
     }
 
     private void OnDrawGizmos()
