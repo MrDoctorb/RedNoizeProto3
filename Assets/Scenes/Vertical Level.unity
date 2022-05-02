@@ -11190,6 +11190,26 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.43
       objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: MaxDistance
+      value: 4.706932
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.30776978
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.27202606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.49964905
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
 --- !u!114 &1631833192 stripped
