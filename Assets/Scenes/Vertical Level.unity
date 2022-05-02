@@ -5017,6 +5017,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: MaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.87612915
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
 --- !u!1 &829711911
@@ -5741,6 +5757,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: MaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.87612915
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
 --- !u!1001 &894844311
@@ -5817,6 +5853,22 @@ PrefabInstance:
     - target: {fileID: 4436629260942535206, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: MaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.87612915
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
@@ -8545,15 +8597,23 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e1649f738ea775b49afe5bc6da76d0c9, type: 2}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: MaxDistance
-      value: 1.4758606
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
-      value: 0.0020198822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5144806
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
@@ -9218,6 +9278,22 @@ PrefabInstance:
     - target: {fileID: 4436629260942535206, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_TagString
       value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: MaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.87612915
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863088666230661874, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
@@ -11228,27 +11304,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: MaxDistance
-      value: 1.2768097
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: rolloffMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
-      value: 0.30776978
+      value: 0.3374939
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
-      value: 0.27202606
+      value: 0.29579926
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.171
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
-      value: 0.0020198822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 0.68992615
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
@@ -12418,11 +12498,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e1649f738ea775b49afe5bc6da76d0c9, type: 2}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: MaxDistance
-      value: 1.5217285
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 0.51951444
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
@@ -13235,7 +13323,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e1649f738ea775b49afe5bc6da76d0c9, type: 2}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: MaxDistance
-      value: 1.5558624
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
@@ -13243,7 +13339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 0.115
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
