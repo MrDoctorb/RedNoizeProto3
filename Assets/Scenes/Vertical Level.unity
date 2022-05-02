@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585185, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.7
+      value: 57.7
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585185, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585185, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.5
+      value: 235.9
       objectReference: {fileID: 0}
     - target: {fileID: 1620674692962585185, guid: d5e5c4b4d5324fb4799b7574d7c74f3f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4740,11 +4740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.2043753
+      value: 13.233
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.510168
+      value: -10.285
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5448,15 +5448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.45
+      value: 10.17
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3998532
+      value: -0.331
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.9
+      value: -39.68
       objectReference: {fileID: 0}
     - target: {fileID: 4436629260942535203, guid: feff4d9d231b45b46b18f4a0614247e8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8756,6 +8756,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EyeDoor Exit Level 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: MaxDistance
+      value: 1.4758606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
+      value: 0.0020198822
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5144806
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
 --- !u!114 &1234079970 stripped
@@ -11188,11 +11200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: m_Volume
-      value: 0.43
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: MaxDistance
-      value: 4.706932
+      value: 1.2768097
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
@@ -11204,11 +11216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
-      value: 0
+      value: 0.0020198822
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: 0.49964905
+      value: 0.68992615
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
@@ -12158,6 +12170,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parkour Exit EyeDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: MaxDistance
+      value: 1.5217285
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.51951444
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
 --- !u!114 &1756058580 stripped
@@ -12858,6 +12878,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 42067c67e58e129409ca9688c775bb5c, type: 2}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: MaxDistance
+      value: 1.5558624
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
 --- !u!114 &1844950108 stripped
