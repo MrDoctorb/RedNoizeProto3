@@ -11239,6 +11239,10 @@ PrefabInstance:
       value: 0.27202606
       objectReference: {fileID: 0}
     - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860226233275993151, guid: 02e6331e47ccb6c4f846040a13019c0d, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
       value: 0.0020198822
       objectReference: {fileID: 0}
