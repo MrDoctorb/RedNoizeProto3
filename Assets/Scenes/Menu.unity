@@ -1862,7 +1862,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: "-Object Models, Textures, and sounds for mask switching and block \n    
+    placement by Seth Weeks\n-Level Design by Ben Lea and Jaxson Walker\n-Programming
+    and game mechanics by Zane Brown\n-In-Game UI and Main menu by Wendy Escamilla-Morque\n\nDoor
+    Sounds from Zapsplat.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
