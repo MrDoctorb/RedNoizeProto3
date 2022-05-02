@@ -386,15 +386,18 @@ public class PlayerController : MonoBehaviour
 
 
             Debug.DrawLine(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0), Color.green);
-            //Checking Jumping Stuff
-            grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
 
             // print(grounded);
-            //Jumping
-            if (Input.GetKeyDown(KeyCode.Space) && grounded)
-            {
-                rb.AddForce(0, jumpForce, 0);
-            }
+        }
+
+
+        //Checking Jumping Stuff
+        grounded = Physics.Linecast(cam.transform.position - new Vector3(0, 1, 0), transform.position - new Vector3(0, 1.25f, 0));
+
+        //Jumping
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
+            rb.AddForce(0, jumpForce, 0);
         }
     }
 
